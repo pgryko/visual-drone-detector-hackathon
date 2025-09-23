@@ -1,0 +1,204 @@
+{
+  "dataset": "Syndrone",
+  "root": "datasets/Syndrone",
+  "generated_at": "2025-09-23T16:35:11.155256+00:00",
+  "hashed": true,
+  "summary": {
+    "file_count": 24,
+    "total_bytes": 86999
+  },
+  "files": [
+    {
+      "local_path": ".gitignore",
+      "r2_key": "Syndrone/.gitignore",
+      "size_bytes": 3139,
+      "sha256": "3f32d104110027b0ee71ca50cd12cb3322f791746d301e05445386fd3205de5a",
+      "ext": "",
+      "mtime": 1758628340.168004
+    },
+    {
+      "local_path": "LICENSE",
+      "r2_key": "Syndrone/LICENSE",
+      "size_bytes": 11393,
+      "sha256": "6224ad34160d4e3e09d86384515894192c09cfd9ce66d9a8cf04ac2817ac7cee",
+      "ext": "",
+      "mtime": 1758628340.168004
+    },
+    {
+      "local_path": "README.md",
+      "r2_key": "Syndrone/README.md",
+      "size_bytes": 6965,
+      "sha256": "8494944d404dc5517c31e36cca793ee4fba4743bf7f625a3bc2464369a4fe2f7",
+      "ext": "md",
+      "mtime": 1758628340.168004
+    },
+    {
+      "local_path": "extra/carla_env.yml",
+      "r2_key": "Syndrone/extra/carla_env.yml",
+      "size_bytes": 187,
+      "sha256": "c584ddb126afa6767ac7b165d034ee839169f476788c10ba751858069bfa7bd7",
+      "ext": "yml",
+      "mtime": 1758628340.168004
+    },
+    {
+      "local_path": "log_spectator.py",
+      "r2_key": "Syndrone/log_spectator.py",
+      "size_bytes": 3975,
+      "sha256": "1f213fe206f1a636df0266c066653a8496511e3a9265a3ec61b25c2321f49e8b",
+      "ext": "py",
+      "mtime": 1758628340.168004
+    },
+    {
+      "local_path": "modules/__init__.py",
+      "r2_key": "Syndrone/modules/__init__.py",
+      "size_bytes": 67,
+      "sha256": "70c9edc77ffc0ee320186e92f039c0c5675aab4492990b12c190d820d4e45d87",
+      "ext": "py",
+      "mtime": 1758628340.1680784
+    },
+    {
+      "local_path": "modules/carla_utils/CarlaClient.py",
+      "r2_key": "Syndrone/modules/carla_utils/CarlaClient.py",
+      "size_bytes": 14205,
+      "sha256": "557b1e0babb31d8e7a8d9d33f2b3c212d5f594144957a7df8fac576f27133387",
+      "ext": "py",
+      "mtime": 1758628340.1688411
+    },
+    {
+      "local_path": "modules/carla_utils/__init__.py",
+      "r2_key": "Syndrone/modules/carla_utils/__init__.py",
+      "size_bytes": 307,
+      "sha256": "6ed13e19c23067c1228a70cc043fb5101dc26a7db058a68c5649535e6162c5e8",
+      "ext": "py",
+      "mtime": 1758628340.1689453
+    },
+    {
+      "local_path": "modules/carla_utils/binary_ply.py",
+      "r2_key": "Syndrone/modules/carla_utils/binary_ply.py",
+      "size_bytes": 1943,
+      "sha256": "da1a108758177a1471f794a03f620e8ae7ca0f59871995fc0e84d4d2d0aba144",
+      "ext": "py",
+      "mtime": 1758628340.1689453
+    },
+    {
+      "local_path": "modules/carla_utils/carla_sync.py",
+      "r2_key": "Syndrone/modules/carla_utils/carla_sync.py",
+      "size_bytes": 1673,
+      "sha256": "fa27071253b47c240e831bba2ab9151dd83a030b1b1efc9d5426e9afd29a139a",
+      "ext": "py",
+      "mtime": 1758628340.1689453
+    },
+    {
+      "local_path": "modules/carla_utils/custom_bp_tags.py",
+      "r2_key": "Syndrone/modules/carla_utils/custom_bp_tags.py",
+      "size_bytes": 13615,
+      "sha256": "79eeb1801fd67b0cdb13e18e090f07b3e2943d65dd9490ee7da936a8c4dceeb5",
+      "ext": "py",
+      "mtime": 1758628340.1689453
+    },
+    {
+      "local_path": "modules/carla_utils/labelmap.py",
+      "r2_key": "Syndrone/modules/carla_utils/labelmap.py",
+      "size_bytes": 1774,
+      "sha256": "ed2ac6fea2a13e548a7e806e767f454c6049ddb48a440ebb012f8f432a67e40e",
+      "ext": "py",
+      "mtime": 1758628340.1689453
+    },
+    {
+      "local_path": "modules/carla_utils/spawn_utils.py",
+      "r2_key": "Syndrone/modules/carla_utils/spawn_utils.py",
+      "size_bytes": 2651,
+      "sha256": "f579f24f8dee43b4be5375976a67e45c6b76fdd86cf430e49d3b64270d5e1eb9",
+      "ext": "py",
+      "mtime": 1758628340.1689453
+    },
+    {
+      "local_path": "modules/helpers/__init__.py",
+      "r2_key": "Syndrone/modules/helpers/__init__.py",
+      "size_bytes": 94,
+      "sha256": "83fffbfbeb19d85b684b4db52cc3a1971b30074059835a913b42da17f0e08781",
+      "ext": "py",
+      "mtime": 1758628340.1689453
+    },
+    {
+      "local_path": "modules/helpers/data_handling.py",
+      "r2_key": "Syndrone/modules/helpers/data_handling.py",
+      "size_bytes": 5992,
+      "sha256": "fe324a0a569e7d19c6bcfe74ceb0392af16c4ac78483fade4e0e716c660f6135",
+      "ext": "py",
+      "mtime": 1758628340.1692598
+    },
+    {
+      "local_path": "modules/utils/__init__.py",
+      "r2_key": "Syndrone/modules/utils/__init__.py",
+      "size_bytes": 140,
+      "sha256": "906b7482ad4e75337877ae9f4f69bf9b2587c25f232fa987a5461320d4730bbe",
+      "ext": "py",
+      "mtime": 1758628340.1692598
+    },
+    {
+      "local_path": "modules/utils/args.py",
+      "r2_key": "Syndrone/modules/utils/args.py",
+      "size_bytes": 5962,
+      "sha256": "26634083cce3cabd3dbb00a9b5464db08f89330eb5b4d725f69b37352e8e05ca",
+      "ext": "py",
+      "mtime": 1758628340.1693788
+    },
+    {
+      "local_path": "modules/utils/loading.py",
+      "r2_key": "Syndrone/modules/utils/loading.py",
+      "size_bytes": 1512,
+      "sha256": "2acbe894ab704989b4b31b5c1b3b35d46b915f131ed76adb1f42184044eaa5cf",
+      "ext": "py",
+      "mtime": 1758628340.1693788
+    },
+    {
+      "local_path": "modules/utils/memory_usage.py",
+      "r2_key": "Syndrone/modules/utils/memory_usage.py",
+      "size_bytes": 433,
+      "sha256": "a62198ffb21f91107b495d0acad53bb20994e457db9f7af14bfdc4efbbf4972a",
+      "ext": "py",
+      "mtime": 1758628340.1693788
+    },
+    {
+      "local_path": "modules/utils/print_manager.py",
+      "r2_key": "Syndrone/modules/utils/print_manager.py",
+      "size_bytes": 660,
+      "sha256": "7a4716fecfb8f4c7df2747bd487dc2957c9c5ce2482e49dc24efa1edddcfd487",
+      "ext": "py",
+      "mtime": 1758628340.1693788
+    },
+    {
+      "local_path": "parse_to_videos.py",
+      "r2_key": "Syndrone/parse_to_videos.py",
+      "size_bytes": 2227,
+      "sha256": "58fa2ef1c4d86fb8332d82c670449a9ef8a4e97bdf43c7d7e0f3bd9a631f8928",
+      "ext": "py",
+      "mtime": 1758628340.1693788
+    },
+    {
+      "local_path": "run_simulation.py",
+      "r2_key": "Syndrone/run_simulation.py",
+      "size_bytes": 2673,
+      "sha256": "ffbd4e575ccd3e60d4f931b8c96be0222405e8d6c3c201b52cce70b39aae5198",
+      "ext": "py",
+      "mtime": 1758628340.1693788
+    },
+    {
+      "local_path": "save_frames.py",
+      "r2_key": "Syndrone/save_frames.py",
+      "size_bytes": 1606,
+      "sha256": "cfdc8833fa750d0a1b336afe6a1b21dfb56e7b4e555a023b80a05a75ad7828bc",
+      "ext": "py",
+      "mtime": 1758628340.1693788
+    },
+    {
+      "local_path": "validate_trajectories.py",
+      "r2_key": "Syndrone/validate_trajectories.py",
+      "size_bytes": 3806,
+      "sha256": "64ffac0e93ab266081f1cb50821e6bcc5aa0da96f570856b4375587e8440b497",
+      "ext": "py",
+      "mtime": 1758628340.1693788
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-{"path": "datasets/dut-anti-uav/README.md", "dataset": "dut-anti-uav", "rel_path": "README.md", "size_bytes": 7730, "mtime": 1757619880.8511257, "ext": "md"}
-{"path": "datasets/dut-anti-uav/AntiUAVDetection.jpg", "dataset": "dut-anti-uav", "rel_path": "AntiUAVDetection.jpg", "size_bytes": 6376019, "mtime": 1757619880.8501258, "ext": "jpg"}
-{"path": "datasets/dut-anti-uav/DATASET_README.md", "dataset": "dut-anti-uav", "rel_path": "DATASET_README.md", "size_bytes": 3146, "mtime": 1757623439.7067096, "ext": "md"}
-{"path": "datasets/dut-anti-uav/LICENSE", "dataset": "dut-anti-uav", "rel_path": "LICENSE", "size_bytes": 11357, "mtime": 1757619880.8511257, "ext": ""}
+{"path": "datasets/dut-anti-uav/README.md", "dataset": "dut-anti-uav", "rel_path": "README.md", "size_bytes": 7730, "mtime": 1757619880.8511257, "ext": "md", "sha256": "a6461737679c0d7273c16d820800ac2e76c39622a5ebd2cf5be6595febfa70dc"}
+{"path": "datasets/dut-anti-uav/AntiUAVDetection.jpg", "dataset": "dut-anti-uav", "rel_path": "AntiUAVDetection.jpg", "size_bytes": 6376019, "mtime": 1757619880.8501258, "ext": "jpg", "sha256": "436cce79adf6b98d39ffd07779839ed5cab7436e237513f0286d4905029ede51"}
+{"path": "datasets/dut-anti-uav/DATASET_README.md", "dataset": "dut-anti-uav", "rel_path": "DATASET_README.md", "size_bytes": 3146, "mtime": 1757623439.7067096, "ext": "md", "sha256": "c8ce3519dd4861f775f74b9bd8f23fb8a9db77b73bb3f161ebf2400a3df1dd29"}
+{"path": "datasets/dut-anti-uav/LICENSE", "dataset": "dut-anti-uav", "rel_path": "LICENSE", "size_bytes": 11357, "mtime": 1757619880.8511257, "ext": "", "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"}

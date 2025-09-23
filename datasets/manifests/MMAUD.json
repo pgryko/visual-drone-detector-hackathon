@@ -1,0 +1,1732 @@
+{
+  "dataset": "MMAUD",
+  "root": "datasets/MMAUD",
+  "generated_at": "2025-09-23T16:34:41.040868+00:00",
+  "hashed": true,
+  "summary": {
+    "file_count": 215,
+    "total_bytes": 19322703505
+  },
+  "files": [
+    {
+      "local_path": ".github/CODEOWNERS",
+      "r2_key": "MMAUD/.github/CODEOWNERS",
+      "size_bytes": 11,
+      "sha256": "941a87becace3f98bcd50084d83a375d2c0e38a17764a38c9f94db06e6b82d0f",
+      "ext": "",
+      "mtime": 1758628184.1976676
+    },
+    {
+      "local_path": ".github/CODE_OF_CONDUCT.md",
+      "r2_key": "MMAUD/.github/CODE_OF_CONDUCT.md",
+      "size_bytes": 3354,
+      "sha256": "7f381732c65f66879762c63bbe2d520792a22799985d173ed7cb9cf4a90aad48",
+      "ext": "md",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": ".github/CONTRIBUTING.md",
+      "r2_key": "MMAUD/.github/CONTRIBUTING.md",
+      "size_bytes": 299,
+      "sha256": "05b685cf73ba6cb0af631469e80f9f795366f8cdc0a2cee83871c1129c2da154",
+      "ext": "md",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": ".github/FUNDING.yml",
+      "r2_key": "MMAUD/.github/FUNDING.yml",
+      "size_bytes": 33,
+      "sha256": "2def908ae86eab3261c7e5b94896ee19e8ffbab6e2e1690496007b82e19732f5",
+      "ext": "yml",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "r2_key": "MMAUD/.github/ISSUE_TEMPLATE/bug_report.md",
+      "size_bytes": 174,
+      "sha256": "6cab66bc445e4d5712c00df251caf747714658d5ded31b1bc155cf096d51b311",
+      "ext": "md",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "r2_key": "MMAUD/.github/PULL_REQUEST_TEMPLATE.md",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ext": "md",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": ".github/dependabot.yml",
+      "r2_key": "MMAUD/.github/dependabot.yml",
+      "size_bytes": 483,
+      "sha256": "881f0ce3308c61e8ba2095d5609047a3a8702e88b7fcaf124ef19b5fccf3cbff",
+      "ext": "yml",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": ".github/workflows/ci.yml",
+      "r2_key": "MMAUD/.github/workflows/ci.yml",
+      "size_bytes": 2864,
+      "sha256": "d03cb00db8c13d1c178f02b3a049e775e26129461e11871a78d97883aca25188",
+      "ext": "yml",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": ".gitignore",
+      "r2_key": "MMAUD/.gitignore",
+      "size_bytes": 241,
+      "sha256": "067d87379d33166112f8447ba8018e0e9a2b2710ebaedaa1c20832e3c460a877",
+      "ext": "",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": ".prettierignore",
+      "r2_key": "MMAUD/.prettierignore",
+      "size_bytes": 38,
+      "sha256": "ce8ebdff3e4cc07a20f92538bac096b739ca6518d1da71612f6e6fc445eb6d53",
+      "ext": "",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": "CNAME",
+      "r2_key": "MMAUD/CNAME",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "ext": "",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": "Gemfile",
+      "r2_key": "MMAUD/Gemfile",
+      "size_bytes": 122,
+      "sha256": "b8bfd02c4124408b98def4155bec4829638e2bcb89c1999e33ad2764bae86618",
+      "ext": "",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": "Gemfile.lock",
+      "r2_key": "MMAUD/Gemfile.lock",
+      "size_bytes": 7297,
+      "sha256": "f46d195f820e4d6db174058da80755020a6fb06e0e0d9e1ccdf5453faac4a047",
+      "ext": "lock",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": "LICENSE",
+      "r2_key": "MMAUD/LICENSE",
+      "size_bytes": 1079,
+      "sha256": "bc45194e91bec1f3b0f351163043af07b87db3261542034099aa728a7b11d544",
+      "ext": "",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": "MMAUD_2D.zip",
+      "r2_key": "MMAUD/MMAUD_2D.zip",
+      "size_bytes": 4690057225,
+      "sha256": "285e6560774582b2375eda8201e167278be2cce9f0a23b19b754fc545c63f9f5",
+      "ext": "zip",
+      "mtime": 1757780012.325269
+    },
+    {
+      "local_path": "Makefile",
+      "r2_key": "MMAUD/Makefile",
+      "size_bytes": 1349,
+      "sha256": "d93d6f3ab74f8ceedb323d99ed3be43bbebb54d8248ece83a395b50b8c49801c",
+      "ext": "",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": "Mavic2.zip",
+      "r2_key": "MMAUD/Mavic2.zip",
+      "size_bytes": 14614828819,
+      "sha256": "6144ee2b9bf44b464d03d725a8e91109ec226487c7b1d937be05d3a6f91f7769",
+      "ext": "zip",
+      "mtime": 1757781052.291407
+    },
+    {
+      "local_path": "README.md",
+      "r2_key": "MMAUD/README.md",
+      "size_bytes": 19038,
+      "sha256": "25a54cef39488bf2280e51f7ae1edea228c3bc4faa1cb35e0cb58356f131f15a",
+      "ext": "md",
+      "mtime": 1758628184.198121
+    },
+    {
+      "local_path": "_config.yml",
+      "r2_key": "MMAUD/_config.yml",
+      "size_bytes": 596,
+      "sha256": "f215a87a012c6d4431411d379d37e9d5ee5f64bfce1ad79249c47bea3554a175",
+      "ext": "yml",
+      "mtime": 1758628184.1986675
+    },
+    {
+      "local_path": "_includes/README.md",
+      "r2_key": "MMAUD/_includes/README.md",
+      "size_bytes": 163,
+      "sha256": "b5a84119afae3b37abf1722c32d7bddb1ecead5830ba16c86a880d9ba0920175",
+      "ext": "md",
+      "mtime": 1758628184.1986675
+    },
+    {
+      "local_path": "_includes/common/assets/data.liquid",
+      "r2_key": "MMAUD/_includes/common/assets/data.liquid",
+      "size_bytes": 76,
+      "sha256": "1931bb22459e54601352edcad05f14eb0ddd4378bdf4ec4dd7aade566f9f0649",
+      "ext": "liquid",
+      "mtime": 1758628184.1988702
+    },
+    {
+      "local_path": "_includes/common/assets/robots.liquid",
+      "r2_key": "MMAUD/_includes/common/assets/robots.liquid",
+      "size_bytes": 68,
+      "sha256": "5d1f6fb539998ac6eb71c2881f60a43da81c5229ea426f24027a379eee2a9bae",
+      "ext": "liquid",
+      "mtime": 1758628184.1989496
+    },
+    {
+      "local_path": "_includes/common/assets/sitemap.liquid",
+      "r2_key": "MMAUD/_includes/common/assets/sitemap.liquid",
+      "size_bytes": 521,
+      "sha256": "5f8ae126f1b1df224a6b7f7a41ad74b4f9ab0aa03fbf8ed7ed87daa952aa6064",
+      "ext": "liquid",
+      "mtime": 1758628184.1989496
+    },
+    {
+      "local_path": "_includes/common/assets/sw.caches.js",
+      "r2_key": "MMAUD/_includes/common/assets/sw.caches.js",
+      "size_bytes": 995,
+      "sha256": "f0c3f5af2f7fe7b5635fb7e6b7f740429b081a52ccbf26aa66507ce3de1c8043",
+      "ext": "js",
+      "mtime": 1758628184.1989496
+    },
+    {
+      "local_path": "_includes/common/core/_list.liquid",
+      "r2_key": "MMAUD/_includes/common/core/_list.liquid",
+      "size_bytes": 688,
+      "sha256": "425f6d9c49bc2bc01ad310269a399dae8e7af96c6a7e8c51b0084fc2e644b68d",
+      "ext": "liquid",
+      "mtime": 1758628184.1989496
+    },
+    {
+      "local_path": "_includes/common/core/list.liquid",
+      "r2_key": "MMAUD/_includes/common/core/list.liquid",
+      "size_bytes": 356,
+      "sha256": "d94a0a02d0c8b74781ebb432c42118f94479913fc84df813b726b94f9e0e2e63",
+      "ext": "liquid",
+      "mtime": 1758628184.1991045
+    },
+    {
+      "local_path": "_includes/common/google_adsense.liquid",
+      "r2_key": "MMAUD/_includes/common/google_adsense.liquid",
+      "size_bytes": 185,
+      "sha256": "42b427e2ec38ff20f2c038bcc5ac2f6d8da3c174604a304e167a900d889d32c1",
+      "ext": "liquid",
+      "mtime": 1758628184.1991045
+    },
+    {
+      "local_path": "_includes/common/google_gtag.liquid",
+      "r2_key": "MMAUD/_includes/common/google_gtag.liquid",
+      "size_bytes": 378,
+      "sha256": "587b099610e395538426a8e2cf2128b037226f26c7397790f7d720edc2a13ca3",
+      "ext": "liquid",
+      "mtime": 1758628184.1991045
+    },
+    {
+      "local_path": "_includes/common/links.liquid",
+      "r2_key": "MMAUD/_includes/common/links.liquid",
+      "size_bytes": 1174,
+      "sha256": "e7871c35559d52a730f6d8667f950e2320908fcbc4f6ff1486f51db3b3bce495",
+      "ext": "liquid",
+      "mtime": 1758628184.1991045
+    },
+    {
+      "local_path": "_includes/common/mathjax.liquid",
+      "r2_key": "MMAUD/_includes/common/mathjax.liquid",
+      "size_bytes": 286,
+      "sha256": "c060fd6220f5c7c04b7202c564881fafedc83d5b939a4ee3f13f8724eae1ae28",
+      "ext": "liquid",
+      "mtime": 1758628184.1991045
+    },
+    {
+      "local_path": "_includes/common/mermaid.liquid",
+      "r2_key": "MMAUD/_includes/common/mermaid.liquid",
+      "size_bytes": 421,
+      "sha256": "fbfe43679b0cdb6c693f3d7dcb0cbc83802400b6a36ce21a77c5b5a44a88180e",
+      "ext": "liquid",
+      "mtime": 1758628184.1991045
+    },
+    {
+      "local_path": "_includes/common/metadata.liquid",
+      "r2_key": "MMAUD/_includes/common/metadata.liquid",
+      "size_bytes": 510,
+      "sha256": "53b712df876dc2b759e3ad823ec747429e4fd6df9edad944802ae939015f89d2",
+      "ext": "liquid",
+      "mtime": 1758628184.1991045
+    },
+    {
+      "local_path": "_includes/common/opengraph.liquid",
+      "r2_key": "MMAUD/_includes/common/opengraph.liquid",
+      "size_bytes": 449,
+      "sha256": "2fcc7ae59d622a238b7d1312bd2237bda14129d8a89ecf9b0892e024a2a563a0",
+      "ext": "liquid",
+      "mtime": 1758628184.1991045
+    },
+    {
+      "local_path": "_includes/common/rest/content.liquid",
+      "r2_key": "MMAUD/_includes/common/rest/content.liquid",
+      "size_bytes": 221,
+      "sha256": "6e8bd03a744e20bddc08e877c0b9fbb654941b44189c115b0dc17c4394da168d",
+      "ext": "liquid",
+      "mtime": 1758628184.1991045
+    },
+    {
+      "local_path": "_includes/common/rest/defaults.liquid",
+      "r2_key": "MMAUD/_includes/common/rest/defaults.liquid",
+      "size_bytes": 301,
+      "sha256": "d474b1d765844d1a32ba3c982bf5c04c52c2071e53070e3949c0cd0a0b0c2e3e",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/rest/description.liquid",
+      "r2_key": "MMAUD/_includes/common/rest/description.liquid",
+      "size_bytes": 120,
+      "sha256": "07ddabde62eac4de2c22a533c05292b6df6b5be4bc49f17843345fa90d14d6fb",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/rest/i18n.liquid",
+      "r2_key": "MMAUD/_includes/common/rest/i18n.liquid",
+      "size_bytes": 66,
+      "sha256": "56b3e38d76b80ea505e97f66a5348a4bc4d331c00c0f908076dbfd0efadd4141",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/rest/nav.liquid",
+      "r2_key": "MMAUD/_includes/common/rest/nav.liquid",
+      "size_bytes": 613,
+      "sha256": "d1b1202e9d4c07b4f78e990d43d022eef4477354fc6bc3ff8147e82db2e3c201",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/rest/site_pages.liquid",
+      "r2_key": "MMAUD/_includes/common/rest/site_pages.liquid",
+      "size_bytes": 354,
+      "sha256": "9e7dbcf6a73831820d1e19f0e6ecf23bc622e0b9cd45a747c35604b32650bc6f",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/rest/tabs.liquid",
+      "r2_key": "MMAUD/_includes/common/rest/tabs.liquid",
+      "size_bytes": 87,
+      "sha256": "847a73649c43ca8e9dc6cad0415848f5db21d4fdbee5095cb82af1f5d67e6efd",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/rest/title.liquid",
+      "r2_key": "MMAUD/_includes/common/rest/title.liquid",
+      "size_bytes": 658,
+      "sha256": "7e1e6cbf29571da89e2f132e20a469901f4e57f031141d3a55be3375f54e57e1",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/rest/variables.liquid",
+      "r2_key": "MMAUD/_includes/common/rest/variables.liquid",
+      "size_bytes": 1524,
+      "sha256": "194e617cd34cff5d1bb3b32d2278d653b7c60e3db65a851e8888512eb1d02115",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/rest/workdir.liquid",
+      "r2_key": "MMAUD/_includes/common/rest/workdir.liquid",
+      "size_bytes": 887,
+      "sha256": "81cb1d7435bb8842553cd831c9d7047c8eb5162e7f4413f78e23606ea50c2743",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/schema.liquid",
+      "r2_key": "MMAUD/_includes/common/schema.liquid",
+      "size_bytes": 868,
+      "sha256": "53bf3a47cd4e0ae4ad5dea79249591d7aacfc0e8f8678394e75e88e64b4571e4",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/script.liquid",
+      "r2_key": "MMAUD/_includes/common/script.liquid",
+      "size_bytes": 555,
+      "sha256": "d747a95bbabca0be71af4a6d27282a7dd7f15bba0782317748c862f3cd1c2958",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/title.liquid",
+      "r2_key": "MMAUD/_includes/common/title.liquid",
+      "size_bytes": 27,
+      "sha256": "b9665e42acd4ee7458d83e13e0c17e5f3b43eb37fa641196b46c42536ec19026",
+      "ext": "liquid",
+      "mtime": 1758628184.1994004
+    },
+    {
+      "local_path": "_includes/common/twitter_cards.liquid",
+      "r2_key": "MMAUD/_includes/common/twitter_cards.liquid",
+      "size_bytes": 334,
+      "sha256": "4d89f15c6732ec6deb4bf40d510b8037e35b8378d11f896eef12c16a3b47e0fe",
+      "ext": "liquid",
+      "mtime": 1758628184.1996675
+    },
+    {
+      "local_path": "_includes/extra/body.html",
+      "r2_key": "MMAUD/_includes/extra/body.html",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ext": "html",
+      "mtime": 1758628184.1996675
+    },
+    {
+      "local_path": "_includes/extra/head.html",
+      "r2_key": "MMAUD/_includes/extra/head.html",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ext": "html",
+      "mtime": 1758628184.1996675
+    },
+    {
+      "local_path": "_includes/extra/script.js",
+      "r2_key": "MMAUD/_includes/extra/script.js",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ext": "js",
+      "mtime": 1758628184.1998377
+    },
+    {
+      "local_path": "_includes/extra/styles.scss",
+      "r2_key": "MMAUD/_includes/extra/styles.scss",
+      "size_bytes": 333,
+      "sha256": "5ab5e6a8c91c6c968c1f931b64e3f4a90adca9f6e03ab313501184bf0802898e",
+      "ext": "scss",
+      "mtime": 1758628184.1998377
+    },
+    {
+      "local_path": "_includes/list.liquid",
+      "r2_key": "MMAUD/_includes/list.liquid",
+      "size_bytes": 40,
+      "sha256": "d766cc3c60486f028c7d6568d10b156b8d0279f1c362fcbd9c9ee8d949ae8177",
+      "ext": "liquid",
+      "mtime": 1758628184.1998377
+    },
+    {
+      "local_path": "_includes/rest/defaults.liquid",
+      "r2_key": "MMAUD/_includes/rest/defaults.liquid",
+      "size_bytes": 102,
+      "sha256": "b4074ddfe69fad45d5381abb94d0126cad23522da4f5b5de3141c07323819248",
+      "ext": "liquid",
+      "mtime": 1758628184.1998377
+    },
+    {
+      "local_path": "_includes/rest/script.liquid",
+      "r2_key": "MMAUD/_includes/rest/script.liquid",
+      "size_bytes": 250,
+      "sha256": "540502145471ff6751cee12262145d5cdb06e46acc2605e0b6b3d4c6308fc185",
+      "ext": "liquid",
+      "mtime": 1758628184.199985
+    },
+    {
+      "local_path": "_includes/rest/styles.liquid",
+      "r2_key": "MMAUD/_includes/rest/styles.liquid",
+      "size_bytes": 220,
+      "sha256": "a1be4a91297347b92e2132536a00e2760500ba7c6f2a4e1bd2aafa69f9c9a276",
+      "ext": "liquid",
+      "mtime": 1758628184.199985
+    },
+    {
+      "local_path": "_includes/shortcodes/danger.liquid",
+      "r2_key": "MMAUD/_includes/shortcodes/danger.liquid",
+      "size_bytes": 279,
+      "sha256": "ec19cc4f2880f10d0b7b5ceee0dd4ab0711910141a76373f3f6c734352185237",
+      "ext": "liquid",
+      "mtime": 1758628184.199985
+    },
+    {
+      "local_path": "_includes/shortcodes/mermaid.liquid",
+      "r2_key": "MMAUD/_includes/shortcodes/mermaid.liquid",
+      "size_bytes": 147,
+      "sha256": "1d7aa2abec34cdd6ac3c316dc3ce6f8b54058d7d6bbb31d66882efeca33d9062",
+      "ext": "liquid",
+      "mtime": 1758628184.2001042
+    },
+    {
+      "local_path": "_includes/shortcodes/note.liquid",
+      "r2_key": "MMAUD/_includes/shortcodes/note.liquid",
+      "size_bytes": 264,
+      "sha256": "5e72db5ea2963c722fee99b8b2205eeaea83733a96d80df92f472d26d84b1415",
+      "ext": "liquid",
+      "mtime": 1758628184.2001042
+    },
+    {
+      "local_path": "_includes/shortcodes/tip.liquid",
+      "r2_key": "MMAUD/_includes/shortcodes/tip.liquid",
+      "size_bytes": 262,
+      "sha256": "6a1d301009f1c74843a5cb197246e73b149beadc249022e20b81d6cab22a471a",
+      "ext": "liquid",
+      "mtime": 1758628184.2001042
+    },
+    {
+      "local_path": "_includes/shortcodes/warning.liquid",
+      "r2_key": "MMAUD/_includes/shortcodes/warning.liquid",
+      "size_bytes": 280,
+      "sha256": "7040267d6f3b69633305dd7218410175e31d832aafaa0b9ebbeeb7bd6b89807b",
+      "ext": "liquid",
+      "mtime": 1758628184.2001042
+    },
+    {
+      "local_path": "_includes/templates/_toctree.liquid",
+      "r2_key": "MMAUD/_includes/templates/_toctree.liquid",
+      "size_bytes": 1709,
+      "sha256": "3d897da39efb3c8e33bcc2eb3eae41e6ab17cea8b306a2944ba3882918ea4f95",
+      "ext": "liquid",
+      "mtime": 1758628184.2001042
+    },
+    {
+      "local_path": "_includes/templates/addons.liquid",
+      "r2_key": "MMAUD/_includes/templates/addons.liquid",
+      "size_bytes": 1749,
+      "sha256": "2692e1bb27c8b9dcb08b82299977a7d75621c4e7605a3e1f2ca97e9ef57e4238",
+      "ext": "liquid",
+      "mtime": 1758628184.200281
+    },
+    {
+      "local_path": "_includes/templates/breadcrumbs.liquid",
+      "r2_key": "MMAUD/_includes/templates/breadcrumbs.liquid",
+      "size_bytes": 1525,
+      "sha256": "22203df59194a6095f24ce83ce84b89ee1a0eb791ef77d30c1e8d552d5e2e8e3",
+      "ext": "liquid",
+      "mtime": 1758628184.200281
+    },
+    {
+      "local_path": "_includes/templates/content.liquid",
+      "r2_key": "MMAUD/_includes/templates/content.liquid",
+      "size_bytes": 865,
+      "sha256": "997c87a1ff3afb555aecbe5e5c82fa092216aaf0561401a454161213efa74925",
+      "ext": "liquid",
+      "mtime": 1758628184.200281
+    },
+    {
+      "local_path": "_includes/templates/footer.liquid",
+      "r2_key": "MMAUD/_includes/templates/footer.liquid",
+      "size_bytes": 2469,
+      "sha256": "ccf610bfb4a3ae11486e5390a3b3baf5e50991a3cef96e407b42101e8ee9d242",
+      "ext": "liquid",
+      "mtime": 1758628184.200281
+    },
+    {
+      "local_path": "_includes/templates/sidebar.liquid",
+      "r2_key": "MMAUD/_includes/templates/sidebar.liquid",
+      "size_bytes": 995,
+      "sha256": "17d913465920f1973fd9c59bc8137b18d85f8f771db63115eb84c67fcbb43306",
+      "ext": "liquid",
+      "mtime": 1758628184.200281
+    },
+    {
+      "local_path": "_includes/templates/toctree.liquid",
+      "r2_key": "MMAUD/_includes/templates/toctree.liquid",
+      "size_bytes": 993,
+      "sha256": "2662588864b3d010b60577689d2974595321be634b5170637b52e942c9164d43",
+      "ext": "liquid",
+      "mtime": 1758628184.200281
+    },
+    {
+      "local_path": "_layouts/default.liquid",
+      "r2_key": "MMAUD/_layouts/default.liquid",
+      "size_bytes": 1077,
+      "sha256": "20d18907815f372431a2245be493754d180b1fd10bf8aa69999f29ac320efc9e",
+      "ext": "liquid",
+      "mtime": 1758628184.200281
+    },
+    {
+      "local_path": "_layouts/tasks/compress.liquid",
+      "r2_key": "MMAUD/_layouts/tasks/compress.liquid",
+      "size_bytes": 723,
+      "sha256": "bd3e45aad693d497038dcdf32b7586d2205f5977870681c815711e4faf04e54e",
+      "ext": "liquid",
+      "mtime": 1758628184.2005513
+    },
+    {
+      "local_path": "_layouts/tasks/shortcodes.liquid",
+      "r2_key": "MMAUD/_layouts/tasks/shortcodes.liquid",
+      "size_bytes": 1566,
+      "sha256": "65d857e40a936eee282be72cc0ffa0bad16db460a85c55545adcc1b1f2149ab4",
+      "ext": "liquid",
+      "mtime": 1758628184.2006004
+    },
+    {
+      "local_path": "_sass/_direction.scss",
+      "r2_key": "MMAUD/_sass/_direction.scss",
+      "size_bytes": 1788,
+      "sha256": "7b7b2f1333cda3f0dad5ad2ec974174b6d8df45910d1e6606a41923e83a3dceb",
+      "ext": "scss",
+      "mtime": 1758628184.2006004
+    },
+    {
+      "local_path": "_sass/_font-face.scss",
+      "r2_key": "MMAUD/_sass/_font-face.scss",
+      "size_bytes": 1896,
+      "sha256": "1077effd1d18e89bd81d7e6c3cade194c82ffcbde4c202032f09c0ed9556fcb9",
+      "ext": "scss",
+      "mtime": 1758628184.2006989
+    },
+    {
+      "local_path": "_sass/_layout.scss",
+      "r2_key": "MMAUD/_sass/_layout.scss",
+      "size_bytes": 1014,
+      "sha256": "5469e7d0306d84d3871cc5de26cfe1293f7bd3f619a908a99fa64fb99e05da21",
+      "ext": "scss",
+      "mtime": 1758628184.2006989
+    },
+    {
+      "local_path": "_sass/_rest.scss",
+      "r2_key": "MMAUD/_sass/_rest.scss",
+      "size_bytes": 389,
+      "sha256": "be58296004b65dcbbf909f34aee275fd43b015c1d1e5ccb7aa8341787d2a78eb",
+      "ext": "scss",
+      "mtime": 1758628184.2006989
+    },
+    {
+      "local_path": "_sass/_root.scss",
+      "r2_key": "MMAUD/_sass/_root.scss",
+      "size_bytes": 219,
+      "sha256": "86fc6dff6a125345beef5cb38e47eb4ccbcf2ddd9d982190a27b0dbccdbec2f1",
+      "ext": "scss",
+      "mtime": 1758628184.2006989
+    },
+    {
+      "local_path": "_sass/_variables.scss",
+      "r2_key": "MMAUD/_sass/_variables.scss",
+      "size_bytes": 962,
+      "sha256": "87fd370fe16083aeb1191cbfa2fac13820599d516641a64d53f450d825645e11",
+      "ext": "scss",
+      "mtime": 1758628184.2006989
+    },
+    {
+      "local_path": "_sass/core/addons.scss",
+      "r2_key": "MMAUD/_sass/core/addons.scss",
+      "size_bytes": 568,
+      "sha256": "9a550a7d864c9bfc42ef3558ea99eed07586d2f3d25e3274508e7111d9463ca1",
+      "ext": "scss",
+      "mtime": 1758628184.2006989
+    },
+    {
+      "local_path": "_sass/core/container.scss",
+      "r2_key": "MMAUD/_sass/core/container.scss",
+      "size_bytes": 185,
+      "sha256": "f2a2ca87f79ce26bcf7eaa21e6e3ea79c24a0b45b066bae1e467eef037376718",
+      "ext": "scss",
+      "mtime": 1758628184.2009366
+    },
+    {
+      "local_path": "_sass/core/content.scss",
+      "r2_key": "MMAUD/_sass/core/content.scss",
+      "size_bytes": 69,
+      "sha256": "733cd34fb53cb26dde7a32ad3a555e6a6812e6748353ac0b89720721a8831b06",
+      "ext": "scss",
+      "mtime": 1758628184.2009366
+    },
+    {
+      "local_path": "_sass/core/header.scss",
+      "r2_key": "MMAUD/_sass/core/header.scss",
+      "size_bytes": 153,
+      "sha256": "22e7427f006c765184b81be8103e3fdef8ae9a6b2baadfe769cd61c23603cd9c",
+      "ext": "scss",
+      "mtime": 1758628184.2009366
+    },
+    {
+      "local_path": "_sass/core/markdown.scss",
+      "r2_key": "MMAUD/_sass/core/markdown.scss",
+      "size_bytes": 1679,
+      "sha256": "927cacd2459e766b433a6556b9664cfe0b61f519465e6eadc33d6088955c87a5",
+      "ext": "scss",
+      "mtime": 1758628184.2009366
+    },
+    {
+      "local_path": "_sass/core/sidebar.scss",
+      "r2_key": "MMAUD/_sass/core/sidebar.scss",
+      "size_bytes": 1742,
+      "sha256": "a9479be79b39fb8da8f9ae1bd5b5ff1627ac1e7dc6eb526d8fc66f622f21bdd3",
+      "ext": "scss",
+      "mtime": 1758628184.2009366
+    },
+    {
+      "local_path": "_sass/core/title.scss",
+      "r2_key": "MMAUD/_sass/core/title.scss",
+      "size_bytes": 170,
+      "sha256": "931dc36fc04bb6a2568808ed92530ccea56e40940068412fe78c602a449cfdba",
+      "ext": "scss",
+      "mtime": 1758628184.2009366
+    },
+    {
+      "local_path": "_sass/core/toasts.scss",
+      "r2_key": "MMAUD/_sass/core/toasts.scss",
+      "size_bytes": 801,
+      "sha256": "1c5cadaba4d230985b423c884ab8c01dd184f27ea53379c8e55679bd5bc6a34c",
+      "ext": "scss",
+      "mtime": 1758628184.2009366
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/base/README.md",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/base/README.md",
+      "size_bytes": 605,
+      "sha256": "8dc81182d9f8476af0f36422357b18bcc85d0299a9dfa87d081b0d95c2f4654e",
+      "ext": "md",
+      "mtime": 1758628184.2012365
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/base/base.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/base/base.scss",
+      "size_bytes": 1485,
+      "sha256": "8f47e63aedfb170b2628a26d263620156dea979ae3ef37b21117bc348a297808",
+      "ext": "scss",
+      "mtime": 1758628184.2013037
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/base/index.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/base/index.scss",
+      "size_bytes": 141,
+      "sha256": "0977ffcfa925bcb802cc5b841bf84ea55df6487db72fb20daeffa06fb7d8dd1d",
+      "ext": "scss",
+      "mtime": 1758628184.2013037
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/base/kbd.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/base/kbd.scss",
+      "size_bytes": 692,
+      "sha256": "aec0ac247df1432df484be7d780a73c6aa2cb325ee269b96fa6a0ed73c588961",
+      "ext": "scss",
+      "mtime": 1758628184.2013037
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/base/normalize.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/base/normalize.scss",
+      "size_bytes": 7278,
+      "sha256": "29361dc0fb29afc75585f533c61dc66c22cc8ae6c9b42fe9bba9bed8e79ef44a",
+      "ext": "scss",
+      "mtime": 1758628184.2013037
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/base/typography-base.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/base/typography-base.scss",
+      "size_bytes": 1322,
+      "sha256": "c1cc22f18002579b44d3a7861d59b6683cbb7591e7efd6e7b1038bb5629d4100",
+      "ext": "scss",
+      "mtime": 1758628184.2013037
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/breadcrumb/README.md",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/breadcrumb/README.md",
+      "size_bytes": 629,
+      "sha256": "4a5df282201a8a86d1a3eea3e555dc764e1b4555decd0cb5ba46923ec94c7d20",
+      "ext": "md",
+      "mtime": 1758628184.2013037
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/breadcrumb/breadcrumb.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/breadcrumb/breadcrumb.scss",
+      "size_bytes": 528,
+      "sha256": "acf99d51eee8014e6fca2886f5f3a74d0403d1c685a2ca36c1bd525c63622706",
+      "ext": "scss",
+      "mtime": 1758628184.2015543
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/breadcrumb/index.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/breadcrumb/index.scss",
+      "size_bytes": 79,
+      "sha256": "74039949283911f7a139d7ffc638a1951f41d3ae12e6c3d81f96a6917027dd08",
+      "ext": "scss",
+      "mtime": 1758628184.2015543
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/buttons/README.md",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/buttons/README.md",
+      "size_bytes": 617,
+      "sha256": "3f350044d81ae9c69e8c53caa54557ed49c0aa4c36c906715a7174f3790af2e4",
+      "ext": "md",
+      "mtime": 1758628184.2015543
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/buttons/button-group.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/buttons/button-group.scss",
+      "size_bytes": 1764,
+      "sha256": "8577287fc1c49a82690a83626993f6345068d6f54f73ea08045bb289a4d9def0",
+      "ext": "scss",
+      "mtime": 1758628184.2016742
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/buttons/button.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/buttons/button.scss",
+      "size_bytes": 6430,
+      "sha256": "4512cd6140af78ba6995e6a9c3103ea77351fb3f4e81244866383ac6e1aa3c52",
+      "ext": "scss",
+      "mtime": 1758628184.2016742
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/buttons/index.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/buttons/index.scss",
+      "size_bytes": 112,
+      "sha256": "4bfbbcdd4ecb777a3ef1efce9e6a40a463155635cff7facc3df2be2e4326825c",
+      "ext": "scss",
+      "mtime": 1758628184.2016742
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/buttons/misc.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/buttons/misc.scss",
+      "size_bytes": 4203,
+      "sha256": "48fefe5518ad4ac68cb0f55e8ceed3222d57f3eee33cbaa0fa3437d6f36b28e0",
+      "ext": "scss",
+      "mtime": 1758628184.2016742
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/forms/README.md",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/forms/README.md",
+      "size_bytes": 609,
+      "sha256": "9f01621fa90e70cd4833fde7de45b9c971be91d0a5c4e9fa0ebe3402a50abc1a",
+      "ext": "md",
+      "mtime": 1758628184.2016742
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/forms/form-control.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/forms/form-control.scss",
+      "size_bytes": 6177,
+      "sha256": "32ec546ca11b666581ac21b0e2d547e8611046ea5f9c56fe894b052b2b4eae9f",
+      "ext": "scss",
+      "mtime": 1758628184.201905
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/forms/form-group.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/forms/form-group.scss",
+      "size_bytes": 5419,
+      "sha256": "4cc0f51ae470156188229d4d748dac35d36a19d8376c2afa6278b7fdcfe1ace8",
+      "ext": "scss",
+      "mtime": 1758628184.201905
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/forms/form-select.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/forms/form-select.scss",
+      "size_bytes": 982,
+      "sha256": "ed2028d1e0cb61a17e224931ec933246340df6cb55f079caa5242a825546b652",
+      "ext": "scss",
+      "mtime": 1758628184.201905
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/forms/form-validation.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/forms/form-validation.scss",
+      "size_bytes": 7480,
+      "sha256": "a9b58e7af3146459567e81ec3168a4fe2456c50e74838dc40f3c3cf41f33a45f",
+      "ext": "scss",
+      "mtime": 1758628184.201905
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/forms/index.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/forms/index.scss",
+      "size_bytes": 217,
+      "sha256": "3b38eb333d0f7cdf3346125d8d5e836e7fde19a9181654e21539cc5746278cd1",
+      "ext": "scss",
+      "mtime": 1758628184.201905
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/forms/input-group.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/forms/input-group.scss",
+      "size_bytes": 961,
+      "sha256": "e16b36acb3268827aed3192b2bd22abcb135ca0f8223dc9205dfb7c80895c467",
+      "ext": "scss",
+      "mtime": 1758628184.201905
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/forms/radio-group.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/forms/radio-group.scss",
+      "size_bytes": 1045,
+      "sha256": "b51ee8ba08fb9b84851d4fe3644352e764af698be6c38028dfbbfd15845e406c",
+      "ext": "scss",
+      "mtime": 1758628184.201905
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/loaders/README.md",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/loaders/README.md",
+      "size_bytes": 617,
+      "sha256": "9fa54a3287ccfd923ab0387679d4b3b3f594ba1317de77d61036bd96093c51a8",
+      "ext": "md",
+      "mtime": 1758628184.201905
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/loaders/index.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/loaders/index.scss",
+      "size_bytes": 59,
+      "sha256": "6931be221010ab02d18a601f77cbcdad941c8df57b601f8d7af4a25b97e67bc6",
+      "ext": "scss",
+      "mtime": 1758628184.2022407
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/loaders/loaders.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/loaders/loaders.scss",
+      "size_bytes": 367,
+      "sha256": "7c0a486f9f5fe07a41b4a611115d6cadbfa411f21374b8a541dd93538336219e",
+      "ext": "scss",
+      "mtime": 1758628184.2022407
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/markdown/README.md",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/markdown/README.md",
+      "size_bytes": 621,
+      "sha256": "e0ce686247ceadec14a1f077676b44eafdf718677a47dd6e4c72686a4e3483ea",
+      "ext": "md",
+      "mtime": 1758628184.2022407
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/markdown/blob-csv.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/markdown/blob-csv.scss",
+      "size_bytes": 584,
+      "sha256": "612dd38d0e8bff7ae215f3b50f9c086f4b5d3617d99357efb4d5eb138fa630c8",
+      "ext": "scss",
+      "mtime": 1758628184.202362
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/markdown/code.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/markdown/code.scss",
+      "size_bytes": 1421,
+      "sha256": "1ceb9c38c7ce96eff89dfd912a6e5580aa659f685b5bbd1232cba0eb43b8dbd5",
+      "ext": "scss",
+      "mtime": 1758628184.202362
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/markdown/headings.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/markdown/headings.scss",
+      "size_bytes": 1403,
+      "sha256": "0363230cbb1c6bd202af3d340f17fe3e56a076f1c39289350a280e9fa412a658",
+      "ext": "scss",
+      "mtime": 1758628184.202362
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/markdown/images.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/markdown/images.scss",
+      "size_bytes": 2757,
+      "sha256": "b3b0207c3aaddb9aff2898a7f5f42d1d78c3de7725d4e5b758d731b53a152890",
+      "ext": "scss",
+      "mtime": 1758628184.202362
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/markdown/index.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/markdown/index.scss",
+      "size_bytes": 216,
+      "sha256": "12d5fbd47c7fcaa54c150eb5991d09d7c0c85677f9d2d64958df0cc91ef0e19d",
+      "ext": "scss",
+      "mtime": 1758628184.202362
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/markdown/lists.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/markdown/lists.scss",
+      "size_bytes": 1520,
+      "sha256": "3f9f406de42dc1284236afb890666045236df3d7ac58a32595c07bd3489af873",
+      "ext": "scss",
+      "mtime": 1758628184.202362
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/markdown/markdown-body.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/markdown/markdown-body.scss",
+      "size_bytes": 2189,
+      "sha256": "bb605b556c62ee8ee20c902705b7c77ec525a6aeeba0845457e3e611cdffe618",
+      "ext": "scss",
+      "mtime": 1758628184.202362
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/markdown/tables.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/markdown/tables.scss",
+      "size_bytes": 811,
+      "sha256": "26dbbf4c0d8364aa73aec7ffdcdb54cc43d8fde623da705e6c597155b66e5e5e",
+      "ext": "scss",
+      "mtime": 1758628184.202362
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/README.md",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/README.md",
+      "size_bytes": 617,
+      "sha256": "a5b30d0a6c3cd2820b326a945aeb47028ccf429efe83a3925fba5056d4b023c9",
+      "ext": "md",
+      "mtime": 1758628184.202362
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/index.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/index.scss",
+      "size_bytes": 297,
+      "sha256": "7fbf7c57e6eeacb1d199ccc10c6f037fb207c695cc72246ce256c7f7cb58a3e0",
+      "ext": "scss",
+      "mtime": 1758628184.2026825
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/mixins/buttons.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/mixins/buttons.scss",
+      "size_bytes": 4149,
+      "sha256": "1fa38fb36cbcc0740b2a650f3ad7567bb0c6d393f3997c927d40f8a2d069e979",
+      "ext": "scss",
+      "mtime": 1758628184.2026825
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/mixins/layout.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/mixins/layout.scss",
+      "size_bytes": 1225,
+      "sha256": "c7a16487af0b64df4209790eff08fc6c094b16129e9a06a3db62d2ea60cdb5ff",
+      "ext": "scss",
+      "mtime": 1758628184.2028096
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/mixins/misc.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/mixins/misc.scss",
+      "size_bytes": 605,
+      "sha256": "0b043aeff11aa872bd810fa87c4b22fbcb92cd62abad8c32759fb46f63299f3f",
+      "ext": "scss",
+      "mtime": 1758628184.2028096
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/mixins/typography.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/mixins/typography.scss",
+      "size_bytes": 1781,
+      "sha256": "5f1d7d79865626278a4a8d396f3926ce8a95a5f747f1140ffa558f8435e784d8",
+      "ext": "scss",
+      "mtime": 1758628184.2028096
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/variables/color-system.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/variables/color-system.scss",
+      "size_bytes": 5453,
+      "sha256": "01c6d61bcdf8b3b3dc386f766df502a87a4f8981739ca363c78261fa87394888",
+      "ext": "scss",
+      "mtime": 1758628184.2028096
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/variables/colors.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/variables/colors.scss",
+      "size_bytes": 1788,
+      "sha256": "df033fb547047f09989479f153e0f77057bfbb7a92a75440c90fda1496496991",
+      "ext": "scss",
+      "mtime": 1758628184.2029912
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/variables/layout.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/variables/layout.scss",
+      "size_bytes": 3337,
+      "sha256": "aade53132216421ea187c34816c00a245f65cc4afe8075fc6381a6ee3894d7c6",
+      "ext": "scss",
+      "mtime": 1758628184.2029912
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/variables/misc.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/variables/misc.scss",
+      "size_bytes": 1602,
+      "sha256": "19b7652378504a0d37bcaddbe5b43534045bb5715a67c9420f2023e27ca8a8a0",
+      "ext": "scss",
+      "mtime": 1758628184.2029912
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/support/variables/typography.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/support/variables/typography.scss",
+      "size_bytes": 1155,
+      "sha256": "219e4dbeba0f94e2e5687c8a737a5c033cb3597ee64cb67e40e852e2ba45d3fd",
+      "ext": "scss",
+      "mtime": 1758628184.2029912
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/README.md",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/README.md",
+      "size_bytes": 625,
+      "sha256": "f0c7c2d55c97600f435cf2956a57f942f486393fd4cb4ecbde48fe6aef99a553",
+      "ext": "md",
+      "mtime": 1758628184.2029912
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/animations.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/animations.scss",
+      "size_bytes": 2875,
+      "sha256": "3a583e72a4b968439f8add576d546a12568eed300547a86946784093a6c8ff24",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/borders.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/borders.scss",
+      "size_bytes": 5044,
+      "sha256": "2763849266595fda939ea4bb417edff5a900555a5271df97ab65d3d1b1057c68",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/box-shadow.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/box-shadow.scss",
+      "size_bytes": 387,
+      "sha256": "ca5ee8ebabb5c72e323c267ec369422838a1fdc42c45a5089efaa30518141294",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/colors.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/colors.scss",
+      "size_bytes": 4320,
+      "sha256": "e86a7804a082e30ca96da5703398d2bc7bc3cc5cfa86d43ce8b98c1544e07265",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/details.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/details.scss",
+      "size_bytes": 654,
+      "sha256": "9e6726a27971e0a38a18b1ff70c9aaf65447c17c19827f937535bddd33e6cbce",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/flexbox.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/flexbox.scss",
+      "size_bytes": 3126,
+      "sha256": "67228f4d59a2a4b49958edf1183bbe572b67a1183f0f72c83744701a4e327123",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/index.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/index.scss",
+      "size_bytes": 468,
+      "sha256": "45c1d306286562bf8a194ed258719489e1a6ee139951d177cb8d92ef6ca43359",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/layout.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/layout.scss",
+      "size_bytes": 3346,
+      "sha256": "2f7cafa1f2c30882285ff82dcf72a376354212da54dc5cc79c1e7fd4a9292a37",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/margin.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/margin.scss",
+      "size_bytes": 2237,
+      "sha256": "9152c872717453e9cda3ea3a476da470a92e5dd7bf693d9da399f5fe2a344076",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/padding.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/padding.scss",
+      "size_bytes": 1803,
+      "sha256": "97847d79224e30f9e47604e4f56fb2baf3237dbfc56c58d1002781773baf5c31",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/typography.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/typography.scss",
+      "size_bytes": 7557,
+      "sha256": "53cb4f4a7b4b6ef4b4dd1f8a945ccd3e7820f87bdd77c13f9c66f06097548bbd",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/@primer/css/utilities/visibility-display.scss",
+      "r2_key": "MMAUD/_sass/lib/@primer/css/utilities/visibility-display.scss",
+      "size_bytes": 1565,
+      "sha256": "a351f607eb5c2e3d2d147992acb49683d92622599598146dea4dabad7e4a2796",
+      "ext": "scss",
+      "mtime": 1758628184.2031925
+    },
+    {
+      "local_path": "_sass/lib/font-awesome/_icons.scss",
+      "r2_key": "MMAUD/_sass/lib/font-awesome/_icons.scss",
+      "size_bytes": 51848,
+      "sha256": "3317b8e38bb2f7ca9a69aa26283c2b2b4178023a2285cb87057c0e9631105f86",
+      "ext": "scss",
+      "mtime": 1758628184.2036676
+    },
+    {
+      "local_path": "_sass/lib/font-awesome/_variables.scss",
+      "r2_key": "MMAUD/_sass/lib/font-awesome/_variables.scss",
+      "size_bytes": 22598,
+      "sha256": "6e4983694393a7381099b8c681093511b60db68c9324dcea7935d0cf2eaa7682",
+      "ext": "scss",
+      "mtime": 1758628184.2036676
+    },
+    {
+      "local_path": "_sass/lib/material-design-lite/_color-definitions.scss",
+      "r2_key": "MMAUD/_sass/lib/material-design-lite/_color-definitions.scss",
+      "size_bytes": 16733,
+      "sha256": "6ac9170e6b40f9aa3027b953b2d2c28c4c03f1ad085b13c8631f14a635d25b82",
+      "ext": "scss",
+      "mtime": 1758628184.2036676
+    },
+    {
+      "local_path": "_sass/lib/material-design-lite/_functions.scss",
+      "r2_key": "MMAUD/_sass/lib/material-design-lite/_functions.scss",
+      "size_bytes": 693,
+      "sha256": "db18bca37c187eb85f9d1555ee9fb5f0be67e8ae28104270e27ad1c555239716",
+      "ext": "scss",
+      "mtime": 1758628184.2040832
+    },
+    {
+      "local_path": "_sass/lib/material-design-lite/_mixins.scss",
+      "r2_key": "MMAUD/_sass/lib/material-design-lite/_mixins.scss",
+      "size_bytes": 7481,
+      "sha256": "b1a30912ab741985dea546ff7e03a83cf0d765e044bb0f79c5830deb533dd6a5",
+      "ext": "scss",
+      "mtime": 1758628184.2040832
+    },
+    {
+      "local_path": "_sass/lib/material-design-lite/_variables.scss",
+      "r2_key": "MMAUD/_sass/lib/material-design-lite/_variables.scss",
+      "size_bytes": 21105,
+      "sha256": "f716cf253cbde55b08b48771985d7b2438c63617b0831498cb875289a578fedd",
+      "ext": "scss",
+      "mtime": 1758628184.2040832
+    },
+    {
+      "local_path": "_sass/lib/rouge/github.scss",
+      "r2_key": "MMAUD/_sass/lib/rouge/github.scss",
+      "size_bytes": 2016,
+      "sha256": "1c352fe82109547878be2cf95c6883d07e3007ba28bbfc7a5dfc0801697bc4fb",
+      "ext": "scss",
+      "mtime": 1758628184.2040832
+    },
+    {
+      "local_path": "_sass/theme.scss",
+      "r2_key": "MMAUD/_sass/theme.scss",
+      "size_bytes": 829,
+      "sha256": "f68e5c3bb00d00a9089cde6276c023f624170110c9c78385b2eeb7198b5c87b6",
+      "ext": "scss",
+      "mtime": 1758628184.2040832
+    },
+    {
+      "local_path": "assets/404.liquid",
+      "r2_key": "MMAUD/assets/404.liquid",
+      "size_bytes": 148,
+      "sha256": "80afb87f07548542ee5c789d2f960bd7c4ce62815652fed9761aee61f7c6c564",
+      "ext": "liquid",
+      "mtime": 1758628184.2040832
+    },
+    {
+      "local_path": "assets/css/fonts/Roboto-Slab-Bold.woff",
+      "r2_key": "MMAUD/assets/css/fonts/Roboto-Slab-Bold.woff",
+      "size_bytes": 87624,
+      "sha256": "9fec87cadbe2413b255f1ec577573a83f1ca2e1c37aa023dbebcd3a7b864636a",
+      "ext": "woff",
+      "mtime": 1758628184.2044654
+    },
+    {
+      "local_path": "assets/css/fonts/Roboto-Slab-Bold.woff2",
+      "r2_key": "MMAUD/assets/css/fonts/Roboto-Slab-Bold.woff2",
+      "size_bytes": 67312,
+      "sha256": "1a0c024dd1a267c52d5575469ffe8570d1e84164de7d393cf3414bafd17d7a0c",
+      "ext": "woff2",
+      "mtime": 1758628184.2047403
+    },
+    {
+      "local_path": "assets/css/fonts/Roboto-Slab-Regular.woff",
+      "r2_key": "MMAUD/assets/css/fonts/Roboto-Slab-Regular.woff",
+      "size_bytes": 86288,
+      "sha256": "9f32630e2c0c5135bf1e86e36cb65b3932e4410644235bc2bd995e9c7f6ff117",
+      "ext": "woff",
+      "mtime": 1758628184.2047403
+    },
+    {
+      "local_path": "assets/css/fonts/Roboto-Slab-Regular.woff2",
+      "r2_key": "MMAUD/assets/css/fonts/Roboto-Slab-Regular.woff2",
+      "size_bytes": 66444,
+      "sha256": "874e42222856d7af03b3f438d21d923a4280d47fe67c48510e2174a1579795ef",
+      "ext": "woff2",
+      "mtime": 1758628184.2047403
+    },
+    {
+      "local_path": "assets/css/fonts/fontawesome-webfont.eot",
+      "r2_key": "MMAUD/assets/css/fonts/fontawesome-webfont.eot",
+      "size_bytes": 165742,
+      "sha256": "7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979",
+      "ext": "eot",
+      "mtime": 1758628184.2056675
+    },
+    {
+      "local_path": "assets/css/fonts/fontawesome-webfont.svg",
+      "r2_key": "MMAUD/assets/css/fonts/fontawesome-webfont.svg",
+      "size_bytes": 444379,
+      "sha256": "ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4",
+      "ext": "svg",
+      "mtime": 1758628184.2076676
+    },
+    {
+      "local_path": "assets/css/fonts/fontawesome-webfont.ttf",
+      "r2_key": "MMAUD/assets/css/fonts/fontawesome-webfont.ttf",
+      "size_bytes": 165548,
+      "sha256": "aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8",
+      "ext": "ttf",
+      "mtime": 1758628184.2086675
+    },
+    {
+      "local_path": "assets/css/fonts/fontawesome-webfont.woff",
+      "r2_key": "MMAUD/assets/css/fonts/fontawesome-webfont.woff",
+      "size_bytes": 98024,
+      "sha256": "ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07",
+      "ext": "woff",
+      "mtime": 1758628184.2086675
+    },
+    {
+      "local_path": "assets/css/fonts/fontawesome-webfont.woff2",
+      "r2_key": "MMAUD/assets/css/fonts/fontawesome-webfont.woff2",
+      "size_bytes": 77160,
+      "sha256": "2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe",
+      "ext": "woff2",
+      "mtime": 1758628184.2086675
+    },
+    {
+      "local_path": "assets/css/fonts/lato-bold-italic.woff",
+      "r2_key": "MMAUD/assets/css/fonts/lato-bold-italic.woff",
+      "size_bytes": 323344,
+      "sha256": "980c8592e5488df256192c999e92db8fd302db8cd8909b7fa266a684e37e45f8",
+      "ext": "woff",
+      "mtime": 1758628184.2096677
+    },
+    {
+      "local_path": "assets/css/fonts/lato-bold-italic.woff2",
+      "r2_key": "MMAUD/assets/css/fonts/lato-bold-italic.woff2",
+      "size_bytes": 193308,
+      "sha256": "c0916a33340d063f7b05679e08031e729d1888444706f04804705da5966d895d",
+      "ext": "woff2",
+      "mtime": 1758628184.2096677
+    },
+    {
+      "local_path": "assets/css/fonts/lato-bold.woff",
+      "r2_key": "MMAUD/assets/css/fonts/lato-bold.woff",
+      "size_bytes": 309728,
+      "sha256": "0e56b17d142eb366c8007031d14e34da48c70b4a9d9a0ca492e696a7bae45e1e",
+      "ext": "woff",
+      "mtime": 1758628184.2106676
+    },
+    {
+      "local_path": "assets/css/fonts/lato-bold.woff2",
+      "r2_key": "MMAUD/assets/css/fonts/lato-bold.woff2",
+      "size_bytes": 184912,
+      "sha256": "ae88fc0d7a961832f809527d30bd3983a6866d42f66a56ade23f543681594db6",
+      "ext": "woff2",
+      "mtime": 1758628184.2116675
+    },
+    {
+      "local_path": "assets/css/fonts/lato-normal-italic.woff",
+      "r2_key": "MMAUD/assets/css/fonts/lato-normal-italic.woff",
+      "size_bytes": 328412,
+      "sha256": "26318a1467a5e5caf10b04cfa942d079632560cd7a29cec565fd1dc9f7ec5081",
+      "ext": "woff",
+      "mtime": 1758628184.2126677
+    },
+    {
+      "local_path": "assets/css/fonts/lato-normal-italic.woff2",
+      "r2_key": "MMAUD/assets/css/fonts/lato-normal-italic.woff2",
+      "size_bytes": 195704,
+      "sha256": "4465765f2f6eddcdad34ffd7cab559e56bc0e75e45e192f85e9562b0771481dc",
+      "ext": "woff2",
+      "mtime": 1758628184.2126677
+    },
+    {
+      "local_path": "assets/css/fonts/lato-normal.woff",
+      "r2_key": "MMAUD/assets/css/fonts/lato-normal.woff",
+      "size_bytes": 309192,
+      "sha256": "5b9025dda4d7688e3311b0c17eddc501133b807def33effaef6593843cf5416e",
+      "ext": "woff",
+      "mtime": 1758628184.2136676
+    },
+    {
+      "local_path": "assets/css/fonts/lato-normal.woff2",
+      "r2_key": "MMAUD/assets/css/fonts/lato-normal.woff2",
+      "size_bytes": 182708,
+      "sha256": "983b0caf336e8542214fc17019a4fc5e0360864b92806ca14d55c1fc1c2c5a0f",
+      "ext": "woff2",
+      "mtime": 1758628184.2146678
+    },
+    {
+      "local_path": "assets/css/theme.min.css",
+      "r2_key": "MMAUD/assets/css/theme.min.css",
+      "size_bytes": 150543,
+      "sha256": "9aa1913fc4ca9d5cfb9bf34745c1f03fc8fd150fea5c02530c716b000d432a72",
+      "ext": "css",
+      "mtime": 1758628184.2146678
+    },
+    {
+      "local_path": "assets/css/theme.scss",
+      "r2_key": "MMAUD/assets/css/theme.scss",
+      "size_bytes": 31,
+      "sha256": "a240764db960eebac6efdc37a20eed450f32a6120e98ad7c7d044acd927672e1",
+      "ext": "scss",
+      "mtime": 1758628184.2146678
+    },
+    {
+      "local_path": "assets/data.liquid",
+      "r2_key": "MMAUD/assets/data.liquid",
+      "size_bytes": 96,
+      "sha256": "43ee493beaa4d46e1a7044158b67ec2fd24a423278e19b141d400e3e061e910f",
+      "ext": "liquid",
+      "mtime": 1758628184.2146678
+    },
+    {
+      "local_path": "assets/images/apple-touch-icon-300x300.jpg",
+      "r2_key": "MMAUD/assets/images/apple-touch-icon-300x300.jpg",
+      "size_bytes": 8075,
+      "sha256": "e56cf3859256fedcfbd41c979f0c1de17c616a11a844a758b3ded9b8a0f3b4ec",
+      "ext": "jpg",
+      "mtime": 1758628184.2146678
+    },
+    {
+      "local_path": "assets/images/favicon-16x16.png",
+      "r2_key": "MMAUD/assets/images/favicon-16x16.png",
+      "size_bytes": 260,
+      "sha256": "ebc153d96aa3914ecf10a1200eff01f79d419a55d376da1fd58ebc791a28ce9d",
+      "ext": "png",
+      "mtime": 1758628184.2155602
+    },
+    {
+      "local_path": "assets/images/favicon-32x32.png",
+      "r2_key": "MMAUD/assets/images/favicon-32x32.png",
+      "size_bytes": 379,
+      "sha256": "38c0a67cddb6ec50d78678727e40f137edf8715614a10a260c94612e353acac6",
+      "ext": "png",
+      "mtime": 1758628184.2155602
+    },
+    {
+      "local_path": "assets/images/favicon-96x96.png",
+      "r2_key": "MMAUD/assets/images/favicon-96x96.png",
+      "size_bytes": 662,
+      "sha256": "012356dd53980459ff08ef8189c7ae40a38eac96d77f851aa596fcc58ef446ce",
+      "ext": "png",
+      "mtime": 1758628184.2155602
+    },
+    {
+      "local_path": "assets/images/favicon.liquid",
+      "r2_key": "MMAUD/assets/images/favicon.liquid",
+      "size_bytes": 478,
+      "sha256": "fca76e43dd842441056fa39eea33cca021edfaa588d612ae635db11d649b2201",
+      "ext": "liquid",
+      "mtime": 1758628184.2155602
+    },
+    {
+      "local_path": "assets/js/jquery.min.js",
+      "r2_key": "MMAUD/assets/js/jquery.min.js",
+      "size_bytes": 89476,
+      "sha256": "f7f6a5894f1d19ddad6fa392b2ece2c5e578cbf7da4ea805b6885eb6985b6e3d",
+      "ext": "js",
+      "mtime": 1758628184.2156677
+    },
+    {
+      "local_path": "assets/js/mermaid.min.js",
+      "r2_key": "MMAUD/assets/js/mermaid.min.js",
+      "size_bytes": 837686,
+      "sha256": "c9a0795fc38dd5bd36d391425469ba6c45991beeea5a2b28a13fb931743c9586",
+      "ext": "js",
+      "mtime": 1758628184.2186677
+    },
+    {
+      "local_path": "assets/js/theme.js",
+      "r2_key": "MMAUD/assets/js/theme.js",
+      "size_bytes": 7514,
+      "sha256": "22d8c1654a3e6c3b0fccccd2b5c8b2665bb04bebcbe70686192417004cfcb859",
+      "ext": "js",
+      "mtime": 1758628184.2186677
+    },
+    {
+      "local_path": "assets/js/theme.min.js",
+      "r2_key": "MMAUD/assets/js/theme.min.js",
+      "size_bytes": 5946,
+      "sha256": "f4a85f7e1d3d7864d9543fe254ac314b3e7284ca78b0c70ec9a784968c28520e",
+      "ext": "js",
+      "mtime": 1758628184.2186677
+    },
+    {
+      "local_path": "assets/robots.liquid",
+      "r2_key": "MMAUD/assets/robots.liquid",
+      "size_bytes": 89,
+      "sha256": "9727eee91ca1fb085dd14e48520f31baf94f5ad550871c884bf1fcec0f216130",
+      "ext": "liquid",
+      "mtime": 1758628184.2186677
+    },
+    {
+      "local_path": "assets/search.liquid",
+      "r2_key": "MMAUD/assets/search.liquid",
+      "size_bytes": 281,
+      "sha256": "a9b5f2b78a3dbdcf0fc891b34ddad3f6d56e76099a57ab5aeaae93b6798aa007",
+      "ext": "liquid",
+      "mtime": 1758628184.2196677
+    },
+    {
+      "local_path": "assets/sitemap.liquid",
+      "r2_key": "MMAUD/assets/sitemap.liquid",
+      "size_bytes": 101,
+      "sha256": "eb1738f5a3d4395196c579522fe366da01fe9d77d18d742f6f7b2eaff4f1d863",
+      "ext": "liquid",
+      "mtime": 1758628184.2196677
+    },
+    {
+      "local_path": "assets/sw.caches.liquid",
+      "r2_key": "MMAUD/assets/sw.caches.liquid",
+      "size_bytes": 138,
+      "sha256": "8d6cd0ad1bd9e3fe743e1bb37191b83d1a348fc570c7edf3bfbf7d908e7a654e",
+      "ext": "liquid",
+      "mtime": 1758628184.2196677
+    },
+    {
+      "local_path": "docs/Leica_Nova_MS60_DS.pdf",
+      "r2_key": "MMAUD/docs/Leica_Nova_MS60_DS.pdf",
+      "size_bytes": 554140,
+      "sha256": "6e602f2e62f85d1f60c1fd7974c061decb2ab80f31bc3c35399bacd881d533de",
+      "ext": "pdf",
+      "mtime": 1758628184.2206678
+    },
+    {
+      "local_path": "drawing.rar",
+      "r2_key": "MMAUD/drawing.rar",
+      "size_bytes": 424427,
+      "sha256": "182ac1daffc73862f08495b6939bb1c7973837ff440b9929b8aad5cc17e1b632",
+      "ext": "rar",
+      "mtime": 1758628184.2226677
+    },
+    {
+      "local_path": "evaluation_tutorial.md",
+      "r2_key": "MMAUD/evaluation_tutorial.md",
+      "size_bytes": 7534,
+      "sha256": "ececa2796630ea13ee0ecd3f22f21b99ebc7e73dc66fbcf3534a5c44df27d954",
+      "ext": "md",
+      "mtime": 1758628184.2226677
+    },
+    {
+      "local_path": "images/2ddetection_result.png",
+      "r2_key": "MMAUD/images/2ddetection_result.png",
+      "size_bytes": 56442,
+      "sha256": "f7c81240d442509ecf69522acba1aa2176ddcae171cb3819e64a1a4d07523f29",
+      "ext": "png",
+      "mtime": 1758628184.2236679
+    },
+    {
+      "local_path": "images/Data_visualization_all.png",
+      "r2_key": "MMAUD/images/Data_visualization_all.png",
+      "size_bytes": 747340,
+      "sha256": "2f8a3c580b547eabb81302b887c56bd4ab594c44c76cb835edb456fb05149152",
+      "ext": "png",
+      "mtime": 1758628184.2246678
+    },
+    {
+      "local_path": "images/data_visualization.png",
+      "r2_key": "MMAUD/images/data_visualization.png",
+      "size_bytes": 7398175,
+      "sha256": "b9f67ca41ea355de1e921985b6e5d72566aa9e1e6dbbe898178c4b1dee134dba",
+      "ext": "png",
+      "mtime": 1758628184.254668
+    },
+    {
+      "local_path": "images/drone_charactics.png",
+      "r2_key": "MMAUD/images/drone_charactics.png",
+      "size_bytes": 356834,
+      "sha256": "5fb7676a83be810a6fe2bed1617749215675b7a969ebb05d259321b913e0e631",
+      "ext": "png",
+      "mtime": 1758628184.255668
+    },
+    {
+      "local_path": "images/drone_images.jpg",
+      "r2_key": "MMAUD/images/drone_images.jpg",
+      "size_bytes": 2697449,
+      "sha256": "50fe20a88781a5671dde1c69bc3a848d71c037a0ee6d0520657fece0cdc11f67",
+      "ext": "jpg",
+      "mtime": 1758628184.260668
+    },
+    {
+      "local_path": "images/system_overview.png",
+      "r2_key": "MMAUD/images/system_overview.png",
+      "size_bytes": 221245,
+      "sha256": "66da34d0f814b35b3545807f6cb5d23846341c9b47225ced675b8b286b4a03a2",
+      "ext": "png",
+      "mtime": 1758628184.261668
+    },
+    {
+      "local_path": "images/visual_detection_results.png",
+      "r2_key": "MMAUD/images/visual_detection_results.png",
+      "size_bytes": 615652,
+      "sha256": "02a7a8609b0216e39a1f8a80ada44e7974aabc90c7cd9a5363aa464d4d43b2c7",
+      "ext": "png",
+      "mtime": 1758628184.2626681
+    },
+    {
+      "local_path": "jekyll-rtd-theme.gemspec",
+      "r2_key": "MMAUD/jekyll-rtd-theme.gemspec",
+      "size_bytes": 569,
+      "sha256": "2bbaec3181de9f16593d42ce914cb3b67d48d4b83affce77f702c621ad7f8dd7",
+      "ext": "gemspec",
+      "mtime": 1758628184.2626681
+    },
+    {
+      "local_path": "launch",
+      "r2_key": "MMAUD/launch",
+      "size_bytes": 45,
+      "sha256": "9d9df35a96ef973dfca1bc65c17ee65926ded7d529284bc1cf0c0ad3f6e4d8e5",
+      "ext": "",
+      "mtime": 1758628184.2626681
+    },
+    {
+      "local_path": "package.json",
+      "r2_key": "MMAUD/package.json",
+      "size_bytes": 810,
+      "sha256": "271184bce1716c7acca0a120ba74f00a56761380ee75f87e182da08938a39c53",
+      "ext": "json",
+      "mtime": 1758628184.2626681
+    },
+    {
+      "local_path": "requirements.txt",
+      "r2_key": "MMAUD/requirements.txt",
+      "size_bytes": 24,
+      "sha256": "e96bd5a9b7a54e2e50df2cab6721f3b750e065d0983fe3bc5626c47d2fc534ba",
+      "ext": "txt",
+      "mtime": 1758628184.2626681
+    },
+    {
+      "local_path": "sensor_calibration.md",
+      "r2_key": "MMAUD/sensor_calibration.md",
+      "size_bytes": 60,
+      "sha256": "ccb0e032f46ab9c77f466f499a39381537974882e84ad0e1d44518f906f5e938",
+      "ext": "md",
+      "mtime": 1758628184.2626681
+    },
+    {
+      "local_path": "sensors_and_usage.md",
+      "r2_key": "MMAUD/sensors_and_usage.md",
+      "size_bytes": 10762,
+      "sha256": "a137b65016fec3f821bf408d5d815dc7238bc3960381d419df130f14e7abcc1a",
+      "ext": "md",
+      "mtime": 1758628184.2626681
+    },
+    {
+      "local_path": "test/_README.md",
+      "r2_key": "MMAUD/test/_README.md",
+      "size_bytes": 133,
+      "sha256": "14e27bb234907fe93961a1ae2f8b89f8dec7b71de8954cb6da458ee90414104f",
+      "ext": "md",
+      "mtime": 1758628184.2626681
+    },
+    {
+      "local_path": "test/avatar.md",
+      "r2_key": "MMAUD/test/avatar.md",
+      "size_bytes": 268,
+      "sha256": "8e6e1cc5c3f2a8354f036a9d419e76ddcdf068bdb20e2dcd73c7bfb60aec1c3f",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "test/codes.md",
+      "r2_key": "MMAUD/test/codes.md",
+      "size_bytes": 555,
+      "sha256": "cdd67489a29352af410c9ab4f2e9fdfa715e00a99fcf7ff8dfd04fecf797204b",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "test/emoji.md",
+      "r2_key": "MMAUD/test/emoji.md",
+      "size_bytes": 210,
+      "sha256": "5f94311fd158a01a129237ea4a875383bb58613e48f721ae2d737326ce06d015",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "test/fonts.md",
+      "r2_key": "MMAUD/test/fonts.md",
+      "size_bytes": 652,
+      "sha256": "972367a5f443aea708cc8a8983aee435d27bd2a992d92ac6236555aa81167acc",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "test/gist.md",
+      "r2_key": "MMAUD/test/gist.md",
+      "size_bytes": 124,
+      "sha256": "916f80f8dd695544c1961657cb96d3f383f94a4f314a7c0d46963b99e48640eb",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "test/markdown.md",
+      "r2_key": "MMAUD/test/markdown.md",
+      "size_bytes": 5654,
+      "sha256": "db4a48b3d704f0d93ae1a99d1d00af8f4490a96df81d0eb5bb3c1b3a44c1e67e",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "test/mathjax.md",
+      "r2_key": "MMAUD/test/mathjax.md",
+      "size_bytes": 589,
+      "sha256": "519dcd2d8fe9c00bce63d92b8e418366a64ad6909be1807288321915de40ad76",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "test/mentions.md",
+      "r2_key": "MMAUD/test/mentions.md",
+      "size_bytes": 289,
+      "sha256": "cde38fd00ee10cbbedc6ce9e1696faefd1781dbbc43de9743849cf5c79c2e5e3",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "test/mermaid.md",
+      "r2_key": "MMAUD/test/mermaid.md",
+      "size_bytes": 770,
+      "sha256": "5556933289f27b43163884f88d98c4d7f1728f9e90ac4caa3dd9e80ef4a5e50f",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "test/toasts.md",
+      "r2_key": "MMAUD/test/toasts.md",
+      "size_bytes": 656,
+      "sha256": "38560132597ca4eb2609bf778ceea088e429c453d222a5e7cd35037ccf2b38fd",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "test/utilities.md",
+      "r2_key": "MMAUD/test/utilities.md",
+      "size_bytes": 1745,
+      "sha256": "d6d1b04028c44bd662493cb26297edf6f46b71abae1634c87a57ae339aefd942",
+      "ext": "md",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "update.sh",
+      "r2_key": "MMAUD/update.sh",
+      "size_bytes": 2509,
+      "sha256": "8fa99c75937b0a6e713dabb20372f60d96a7fc76bc6a683584f7fdbc2fc30ea9",
+      "ext": "sh",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "utils/restamp.py",
+      "r2_key": "MMAUD/utils/restamp.py",
+      "size_bytes": 5207,
+      "sha256": "4481aec4d3237306e05f0d7d2fb42719823911fc2641a3581d7279055eb729c9",
+      "ext": "py",
+      "mtime": 1758628184.2632592
+    },
+    {
+      "local_path": "webpack.config.js",
+      "r2_key": "MMAUD/webpack.config.js",
+      "size_bytes": 854,
+      "sha256": "18e94bdb36fa8b8824174836ba8d3be727f9df20481ad8380e2e524facd8dc62",
+      "ext": "js",
+      "mtime": 1758628184.2632592
+    }
+  ]
+}

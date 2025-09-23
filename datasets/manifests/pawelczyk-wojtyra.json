@@ -1,0 +1,108 @@
+{
+  "dataset": "pawelczyk-wojtyra",
+  "root": "datasets/pawelczyk-wojtyra",
+  "generated_at": "2025-09-23T16:35:02.392109+00:00",
+  "hashed": true,
+  "summary": {
+    "file_count": 12,
+    "total_bytes": 4930228596
+  },
+  "files": [
+    {
+      "local_path": "DATASET_README.md",
+      "r2_key": "pawelczyk-wojtyra/DATASET_README.md",
+      "size_bytes": 4082,
+      "sha256": "fab4a4ea7a1e471714ddfa232c9ff77ee1ba7d2fafc97b94f2ff7326d3c2a528",
+      "ext": "md",
+      "mtime": 1757623502.7370458
+    },
+    {
+      "local_path": "DroneTestDataset.zip",
+      "r2_key": "pawelczyk-wojtyra/DroneTestDataset.zip",
+      "size_bytes": 568578475,
+      "sha256": "62af07bc9e8227e0d78e871d157425ed837a3516ad348c8a05ff4df0abef815f",
+      "ext": "zip",
+      "mtime": 1757773565.9640791
+    },
+    {
+      "local_path": "DroneTrainDataset.zip",
+      "r2_key": "pawelczyk-wojtyra/DroneTrainDataset.zip",
+      "size_bytes": 4361104225,
+      "sha256": "ed5f9b1b45beb3864314114e023f91ce136e29675ac04dd54a180823e7ff047f",
+      "ext": "zip",
+      "mtime": 1757773490.773873
+    },
+    {
+      "local_path": "Fig/1909.jpg",
+      "r2_key": "pawelczyk-wojtyra/Fig/1909.jpg",
+      "size_bytes": 87817,
+      "sha256": "28ac59c917b744921fc145c335df940b4afa933201d6f638bade80dd4cf87a36",
+      "ext": "jpg",
+      "mtime": 1757619898.1372123
+    },
+    {
+      "local_path": "Fig/4350.jpg",
+      "r2_key": "pawelczyk-wojtyra/Fig/4350.jpg",
+      "size_bytes": 169159,
+      "sha256": "958a35632a90513d835ad29cd41c6ae8e541aaa4d9612104cd91495b2d480c9e",
+      "ext": "jpg",
+      "mtime": 1757619898.1382122
+    },
+    {
+      "local_path": "Fig/pos_G2P8362.jpg",
+      "r2_key": "pawelczyk-wojtyra/Fig/pos_G2P8362.jpg",
+      "size_bytes": 16047,
+      "sha256": "b742d8775888993c8f2d514419dd77826700082e71bd12958c90e04a94cfb5d1",
+      "ext": "jpg",
+      "mtime": 1757619898.1382122
+    },
+    {
+      "local_path": "Fig/pos_G2P9718.jpg",
+      "r2_key": "pawelczyk-wojtyra/Fig/pos_G2P9718.jpg",
+      "size_bytes": 57221,
+      "sha256": "b20b703ae21e4a4b6519a61c76992b4f3d792dd62f6ce61c255e07b700da8636",
+      "ext": "jpg",
+      "mtime": 1757619898.1382122
+    },
+    {
+      "local_path": "Fig/pos_G3P378.jpg",
+      "r2_key": "pawelczyk-wojtyra/Fig/pos_G3P378.jpg",
+      "size_bytes": 21182,
+      "sha256": "3646b38392d16d9f49d7a4130ceebc86dcf6505e0b436115eca798ad478f90ea",
+      "ext": "jpg",
+      "mtime": 1757619898.1382122
+    },
+    {
+      "local_path": "Fig/pos_G3P3932.jpg",
+      "r2_key": "pawelczyk-wojtyra/Fig/pos_G3P3932.jpg",
+      "size_bytes": 44093,
+      "sha256": "0e321dbbe9525ed911c7e3d63cbc0886484921e4e2ec5ff29597eeeeb83ade85",
+      "ext": "jpg",
+      "mtime": 1757619898.1382122
+    },
+    {
+      "local_path": "Fig/pos_G3P4534.jpg",
+      "r2_key": "pawelczyk-wojtyra/Fig/pos_G3P4534.jpg",
+      "size_bytes": 88887,
+      "sha256": "63710bea47a0d6de4c94dd765135da952072099087c2e8c60455526419d0d802",
+      "ext": "jpg",
+      "mtime": 1757619898.1382122
+    },
+    {
+      "local_path": "README.md",
+      "r2_key": "pawelczyk-wojtyra/README.md",
+      "size_bytes": 5834,
+      "sha256": "eedd8d1d0e33a98227dc45ca5c1baf39d39c0e4dafcde60f0fe60ba7b4e8f919",
+      "ext": "md",
+      "mtime": 1757619898.1392121
+    },
+    {
+      "local_path": "Video_Sources.txt",
+      "r2_key": "pawelczyk-wojtyra/Video_Sources.txt",
+      "size_bytes": 51574,
+      "sha256": "63ce3b6712048fa4c78cdaf9a10f34a9ec1ace89988cdb231aa8aa2558ac2c48",
+      "ext": "txt",
+      "mtime": 1757619898.1392121
+    }
+  ]
+}
