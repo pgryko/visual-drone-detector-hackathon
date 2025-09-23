@@ -1,0 +1,14 @@
+[project]
+name = "drone-vision-detector"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.40.30",
+    "gdown>=5.2.0",
+    "kaggle>=1.7.4.5",
+    "pydantic-settings>=2.10.1",
+    "python-dotenv>=1.1.1",
+    "roboflow>=1.2.9",
+]
