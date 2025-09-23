@@ -46,6 +46,7 @@ def generate_presigned_manifest(
             "sha256": file_info.get("sha256"),
             "presigned_url": url,
             "expires_at": expires_at.isoformat(),
+            "dataset": dataset_name,
         }
         if "md5" in file_info:
             entry["md5"] = file_info["md5"]
@@ -98,6 +99,14 @@ def main(argv: Optional[List[str]] = None) -> int:
         "--output",
         help="Output path (only valid when generating a single dataset)",
     )
+    parser.add_argument(
+        "--bundle",
+        help="Optional name for an aggregated manifest that includes every dataset",
+    )
+    parser.add_argument(
+        "--bundle-output",
+        help="Override path for the aggregated manifest (defaults to presigned/<bundle>.public.json)",
+    )
     args = parser.parse_args(argv)
 
     manager = R2Manager()
@@ -111,6 +120,8 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     manifests_dir = Path("datasets/manifests")
     output_paths: List[Path] = []
+    dataset_payloads: List[Dict[str, Any]] = []
+    shared_now = datetime.now(timezone.utc)
 
     for dataset_name in dataset_names:
         manifest_path = manifests_dir / f"{dataset_name}.json"
@@ -124,7 +135,9 @@ def main(argv: Optional[List[str]] = None) -> int:
             s3_client=manager.s3_client,
             bucket_name=manager.bucket_name,
             expires_in=args.expires_in,
+            now=shared_now,
         )
+        dataset_payloads.append(payload)
 
         if args.output and len(dataset_names) == 1:
             output_path = Path(args.output)
@@ -132,6 +145,21 @@ def main(argv: Optional[List[str]] = None) -> int:
             output_path = manifests_dir / "presigned" / f"{dataset_name}.public.json"
         write_manifest(output_path, payload)
         output_paths.append(output_path)
+
+    if args.bundle and dataset_payloads:
+        if args.bundle_output:
+            bundle_path = Path(args.bundle_output)
+        else:
+            bundle_path = manifests_dir / "presigned" / f"{args.bundle}.public.json"
+
+        bundle_payload = build_bundle_manifest(
+            bundle_name=args.bundle,
+            payloads=dataset_payloads,
+            generated_at=shared_now,
+            expires_in=args.expires_in,
+        )
+        write_manifest(bundle_path, bundle_payload)
+        output_paths.append(bundle_path)
 
     if not output_paths:
         return 1
@@ -141,6 +169,33 @@ def main(argv: Optional[List[str]] = None) -> int:
         "\n".join(f" - {path}" for path in output_paths)
     )
     return 0
+
+
+def build_bundle_manifest(
+    bundle_name: str,
+    payloads: List[Dict[str, Any]],
+    generated_at: datetime,
+    expires_in: int,
+) -> Dict[str, Any]:
+    files: List[Dict[str, Any]] = []
+    earliest_expiry: Optional[datetime] = None
+
+    for payload in payloads:
+        payload_expiry = datetime.fromisoformat(payload["expires_at"])
+        if earliest_expiry is None or payload_expiry < earliest_expiry:
+            earliest_expiry = payload_expiry
+        files.extend(payload["files"])
+
+    if earliest_expiry is None:
+        earliest_expiry = generated_at + timedelta(seconds=expires_in)
+
+    return {
+        "bundle": bundle_name,
+        "generated_at": generated_at.isoformat(),
+        "expires_in": expires_in,
+        "expires_at": earliest_expiry.isoformat(),
+        "files": files,
+    }
 
 
 if __name__ == "__main__":

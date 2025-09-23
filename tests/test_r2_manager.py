@@ -34,6 +34,25 @@ class R2ManagerManifestTests(unittest.TestCase):
             json.dumps(manifest, indent=2), encoding="utf-8"
         )
 
+    def test_list_datasets_skips_public_manifests(self):
+        self._write_manifest(
+            "toyset",
+            [
+                {
+                    "local_path": "toyset/file.zip",
+                    "r2_key": "toyset/file.zip",
+                    "size_bytes": 1,
+                    "sha256": "pending",
+                }
+            ],
+        )
+        # Public manifest should be ignored
+        (self.manifests_dir / "toyset.public.json").write_text("{}", encoding="utf-8")
+
+        manager = R2Manager()
+        datasets = manager.list_datasets()
+        self.assertEqual(datasets, ["toyset"])
+
     def test_upload_dataset_updates_pending_hashes(self):
         dataset_name = "toyset"
         dataset_dir = self.datasets_dir / dataset_name

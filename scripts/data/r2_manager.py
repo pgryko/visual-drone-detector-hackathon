@@ -311,6 +311,8 @@ class R2Manager:
         
         datasets = []
         for manifest_file in manifests_dir.glob('*.json'):
+            if manifest_file.name.endswith('.public.json'):
+                continue
             dataset_name = manifest_file.stem
             datasets.append(dataset_name)
         
