@@ -1,0 +1,79 @@
+{
+  "datasets": [
+    {
+      "dataset": "anti-uav410",
+      "manifest": "datasets/manifests/anti-uav410.media.jsonl",
+      "counts": {
+        "total": 192,
+        "video": 48,
+        "image": 144
+      },
+      "splits": {},
+      "paired_records": 0
+    },
+    {
+      "dataset": "drone-tracking-datasets",
+      "manifest": "datasets/manifests/drone-tracking-datasets.media.jsonl",
+      "counts": {
+        "total": 1096,
+        "image": 1096
+      },
+      "splits": {},
+      "paired_records": 0
+    },
+    {
+      "dataset": "dut-anti-uav",
+      "manifest": "datasets/manifests/dut-anti-uav.media.jsonl",
+      "counts": {
+        "total": 1,
+        "image": 1
+      },
+      "splits": {},
+      "paired_records": 0
+    },
+    {
+      "dataset": "MMAUD",
+      "manifest": "datasets/manifests/MMAUD.media.jsonl",
+      "counts": {
+        "total": 11,
+        "image": 11
+      },
+      "splits": {},
+      "paired_records": 0
+    },
+    {
+      "dataset": "pawelczyk-wojtyra",
+      "manifest": "datasets/manifests/pawelczyk-wojtyra.media.jsonl",
+      "counts": {
+        "total": 7,
+        "image": 7
+      },
+      "splits": {},
+      "paired_records": 0
+    },
+    {
+      "dataset": "roboflow-military",
+      "manifest": "datasets/manifests/roboflow-military.media.jsonl",
+      "counts": {
+        "total": 14522,
+        "annotation": 7261,
+        "image": 7261
+      },
+      "splits": {
+        "train": 10476,
+        "test": 1356,
+        "val": 2690
+      },
+      "paired_records": 14522
+    },
+    {
+      "dataset": "Syndrone",
+      "manifest": "datasets/manifests/Syndrone.media.jsonl",
+      "counts": {
+        "total": 0
+      },
+      "splits": {},
+      "paired_records": 0
+    }
+  ]
+}

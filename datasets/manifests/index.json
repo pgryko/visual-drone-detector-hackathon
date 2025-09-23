@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "dataset": "anti-uav410",
+      "root": "datasets/anti-uav410",
+      "manifest": "datasets/manifests/anti-uav410.jsonl",
+      "file_count": 4236,
+      "total_bytes": 9636765183,
+      "hashed": false
+    },
+    {
+      "dataset": "drone-tracking-datasets",
+      "root": "datasets/drone-tracking-datasets",
+      "manifest": "datasets/manifests/drone-tracking-datasets.jsonl",
+      "file_count": 1510,
+      "total_bytes": 34235038162,
+      "hashed": false
+    },
+    {
+      "dataset": "dut-anti-uav",
+      "root": "datasets/dut-anti-uav",
+      "manifest": "datasets/manifests/dut-anti-uav.jsonl",
+      "file_count": 4,
+      "total_bytes": 6398252,
+      "hashed": false
+    },
+    {
+      "dataset": "MMAUD",
+      "root": "datasets/MMAUD",
+      "manifest": "datasets/manifests/MMAUD.jsonl",
+      "file_count": 215,
+      "total_bytes": 19322703505,
+      "hashed": false
+    },
+    {
+      "dataset": "pawelczyk-wojtyra",
+      "root": "datasets/pawelczyk-wojtyra",
+      "manifest": "datasets/manifests/pawelczyk-wojtyra.jsonl",
+      "file_count": 12,
+      "total_bytes": 4930228596,
+      "hashed": false
+    },
+    {
+      "dataset": "roboflow-military",
+      "root": "datasets/roboflow-military",
+      "manifest": "datasets/manifests/roboflow-military.jsonl",
+      "file_count": 14527,
+      "total_bytes": 299649601,
+      "hashed": false
+    },
+    {
+      "dataset": "Syndrone",
+      "root": "datasets/Syndrone",
+      "manifest": "datasets/manifests/Syndrone.jsonl",
+      "file_count": 24,
+      "total_bytes": 86999,
+      "hashed": false
+    }
+  ]
+}

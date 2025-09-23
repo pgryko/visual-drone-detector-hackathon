@@ -1,0 +1,11 @@
+{"path": "datasets/MMAUD/assets/images/favicon-16x16.png", "dataset": "MMAUD", "rel_path": "assets/images/favicon-16x16.png", "kind": "image", "group_id": "favicon-16x16"}
+{"path": "datasets/MMAUD/assets/images/favicon-32x32.png", "dataset": "MMAUD", "rel_path": "assets/images/favicon-32x32.png", "kind": "image", "group_id": "favicon-32x32"}
+{"path": "datasets/MMAUD/assets/images/favicon-96x96.png", "dataset": "MMAUD", "rel_path": "assets/images/favicon-96x96.png", "kind": "image", "group_id": "favicon-96x96"}
+{"path": "datasets/MMAUD/assets/images/apple-touch-icon-300x300.jpg", "dataset": "MMAUD", "rel_path": "assets/images/apple-touch-icon-300x300.jpg", "kind": "image", "group_id": "apple-touch-icon-300x300"}
+{"path": "datasets/MMAUD/images/Data_visualization_all.png", "dataset": "MMAUD", "rel_path": "images/Data_visualization_all.png", "kind": "image", "group_id": "Data_visualization_all"}
+{"path": "datasets/MMAUD/images/2ddetection_result.png", "dataset": "MMAUD", "rel_path": "images/2ddetection_result.png", "kind": "image", "group_id": "2ddetection_result"}
+{"path": "datasets/MMAUD/images/drone_charactics.png", "dataset": "MMAUD", "rel_path": "images/drone_charactics.png", "kind": "image", "group_id": "drone_charactics"}
+{"path": "datasets/MMAUD/images/system_overview.png", "dataset": "MMAUD", "rel_path": "images/system_overview.png", "kind": "image", "group_id": "system_overview"}
+{"path": "datasets/MMAUD/images/data_visualization.png", "dataset": "MMAUD", "rel_path": "images/data_visualization.png", "kind": "image", "group_id": "data_visualization"}
+{"path": "datasets/MMAUD/images/drone_images.jpg", "dataset": "MMAUD", "rel_path": "images/drone_images.jpg", "kind": "image", "group_id": "drone_images"}
+{"path": "datasets/MMAUD/images/visual_detection_results.png", "dataset": "MMAUD", "rel_path": "images/visual_detection_results.png", "kind": "image", "group_id": "visual_detection_results"}

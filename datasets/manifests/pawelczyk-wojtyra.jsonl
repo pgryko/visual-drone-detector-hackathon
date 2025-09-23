@@ -1,0 +1,12 @@
+{"path": "datasets/pawelczyk-wojtyra/Video_Sources.txt", "dataset": "pawelczyk-wojtyra", "rel_path": "Video_Sources.txt", "size_bytes": 51574, "mtime": 1757619898.1392121, "ext": "txt"}
+{"path": "datasets/pawelczyk-wojtyra/DroneTestDataset.zip", "dataset": "pawelczyk-wojtyra", "rel_path": "DroneTestDataset.zip", "size_bytes": 568578475, "mtime": 1757773565.9640791, "ext": "zip"}
+{"path": "datasets/pawelczyk-wojtyra/README.md", "dataset": "pawelczyk-wojtyra", "rel_path": "README.md", "size_bytes": 5834, "mtime": 1757619898.1392121, "ext": "md"}
+{"path": "datasets/pawelczyk-wojtyra/DATASET_README.md", "dataset": "pawelczyk-wojtyra", "rel_path": "DATASET_README.md", "size_bytes": 4082, "mtime": 1757623502.7370458, "ext": "md"}
+{"path": "datasets/pawelczyk-wojtyra/DroneTrainDataset.zip", "dataset": "pawelczyk-wojtyra", "rel_path": "DroneTrainDataset.zip", "size_bytes": 4361104225, "mtime": 1757773490.773873, "ext": "zip"}
+{"path": "datasets/pawelczyk-wojtyra/Fig/pos_G2P8362.jpg", "dataset": "pawelczyk-wojtyra", "rel_path": "Fig/pos_G2P8362.jpg", "size_bytes": 16047, "mtime": 1757619898.1382122, "ext": "jpg"}
+{"path": "datasets/pawelczyk-wojtyra/Fig/pos_G3P3932.jpg", "dataset": "pawelczyk-wojtyra", "rel_path": "Fig/pos_G3P3932.jpg", "size_bytes": 44093, "mtime": 1757619898.1382122, "ext": "jpg"}
+{"path": "datasets/pawelczyk-wojtyra/Fig/pos_G2P9718.jpg", "dataset": "pawelczyk-wojtyra", "rel_path": "Fig/pos_G2P9718.jpg", "size_bytes": 57221, "mtime": 1757619898.1382122, "ext": "jpg"}
+{"path": "datasets/pawelczyk-wojtyra/Fig/4350.jpg", "dataset": "pawelczyk-wojtyra", "rel_path": "Fig/4350.jpg", "size_bytes": 169159, "mtime": 1757619898.1382122, "ext": "jpg"}
+{"path": "datasets/pawelczyk-wojtyra/Fig/pos_G3P378.jpg", "dataset": "pawelczyk-wojtyra", "rel_path": "Fig/pos_G3P378.jpg", "size_bytes": 21182, "mtime": 1757619898.1382122, "ext": "jpg"}
+{"path": "datasets/pawelczyk-wojtyra/Fig/1909.jpg", "dataset": "pawelczyk-wojtyra", "rel_path": "Fig/1909.jpg", "size_bytes": 87817, "mtime": 1757619898.1372123, "ext": "jpg"}
+{"path": "datasets/pawelczyk-wojtyra/Fig/pos_G3P4534.jpg", "dataset": "pawelczyk-wojtyra", "rel_path": "Fig/pos_G3P4534.jpg", "size_bytes": 88887, "mtime": 1757619898.1382122, "ext": "jpg"}
