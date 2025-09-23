@@ -17,35 +17,34 @@ datasets/
 
 ### 1. Setup Environment
 ```bash
-# Install dependencies and create .env
-make setup
+# Install dependencies and create .env from the template
+uv sync
+cp .env.example .env
 
-# Edit .env with your Cloudflare R2 credentials
+# Edit .env with your Cloudflare R2 credentials (maintainers only)
 nano .env
 ```
 
 ### 2. Download Datasets
 ```bash
-# Download all datasets
-make download-data
+# Participants: download using a public manifest shared by organisers
+python scripts/data/download_public_dataset.py   --manifest path/to/visdrone.public.json   --output-dir datasets
 
-# Download specific dataset
-make download-visdrone
+# Maintainers: download directly from R2 using credentials
+python scripts/data/r2_manager.py download --dataset visdrone
 ```
 
 ### 3. Upload Datasets (Maintainers)
 ```bash
-# Upload all datasets to R2
-make upload-data
-
-# Upload specific dataset
-make upload-visdrone
+# Upload a specific dataset to R2 (updates manifest with checksums)
+python scripts/data/r2_manager.py upload --dataset visdrone
 ```
 
 ## 📊 Available Datasets
 
 | Dataset | Size | Images | Status | Manifest |
 |---------|------|--------|--------|----------|
+| Sample Starter | 445B | 1 | ✅ Included | `manifests/sample-starter.json` |
 | VisDrone | 17GB | 10,209 + 261K frames | ✅ Downloaded | `manifests/visdrone.json` |
 | UAVDT | 6.79GB | 77,819 | ✅ Downloaded | `manifests/uavdt.json` |
 | Anti-UAV410 | 6.4GB | 410 sequences | ✅ Downloaded | Create manifest |
@@ -78,31 +77,34 @@ make upload-visdrone
 
 ### List Available Datasets
 ```bash
-make list-datasets
-# or
-uv run python scripts/data/r2_manager.py list
+python scripts/data/r2_manager.py list
 ```
 
 ### Download Dataset
 ```bash
 # Download with validation
-uv run python scripts/data/r2_manager.py download --dataset visdrone
+python scripts/data/r2_manager.py download --dataset visdrone
 
 # Skip validation (faster)
-uv run python scripts/data/r2_manager.py download --dataset visdrone --no-validate
+python scripts/data/r2_manager.py download --dataset visdrone --no-validate
 ```
 
 ### Upload Dataset
 ```bash
 # Upload and update checksums
-uv run python scripts/data/r2_manager.py upload --dataset visdrone
+python scripts/data/r2_manager.py upload --dataset visdrone
 ```
 
-### Sync All Datasets
+### Publish Public Manifest (Maintainers)
 ```bash
-# Download missing or updated datasets
-make sync-data
+# Generate presigned URLs valid for 24 hours and write to a shareable JSON file
+python scripts/data/generate_presigned_urls.py   --dataset visdrone   --expires-in 86400   --output datasets/manifests/visdrone.public.json
 ```
+
+Share the resulting `*.public.json` with participants. They can download using `scripts/data/download_public_dataset.py`.
+
+A sample public manifest lives at `datasets/manifests/sample-starter.public.json`. Update
+its `presigned_url` field with your hosting location before sharing.
 
 ## 📋 Manifest Format
 
@@ -110,29 +112,32 @@ Each dataset has a JSON manifest in `datasets/manifests/` with:
 
 ```json
 {
-  "name": "dataset_name",
-  "version": "1.0",
+  "dataset": "dataset_name",
+  "generated_at": "2025-01-01T00:00:00+00:00",
+  "summary": {
+    "file_count": 1,
+    "total_bytes": 1234567890
+  },
   "files": [
     {
       "local_path": "relative/path/to/file.zip",
-      "r2_key": "dataset_name/v1.0/file.zip",
+      "r2_key": "dataset_name/file.zip",
       "size_bytes": 1234567890,
-      "md5": "...",
-      "sha256": "..."
+      "md5": "pending",
+      "sha256": "pending"
     }
-  ],
-  "metadata": {...}
+  ]
 }
 ```
 
 ## 🔄 Workflow
 
 ### For Contributors
-1. Clone repository
-2. Configure R2 credentials in `.env`
-3. Download datasets: `make download-data`
-4. Work on code (datasets stay out of git)
-5. Commit code changes only
+1. Clone the repository.
+2. If you are a maintainer, configure R2 credentials in `.env`. Participants can skip this step.
+3. Download datasets using either a public manifest (`download_public_dataset.py`) or the R2 manager if you have credentials.
+4. Work on code — datasets stay out of git.
+5. Commit code changes only.
 
 ### For CI/CD
 ```yaml
@@ -140,17 +145,17 @@ Each dataset has a JSON manifest in `datasets/manifests/` with:
   env:
     R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
     R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-  run: make download-visdrone
+  run: python scripts/data/r2_manager.py download --dataset visdrone
 ```
 
 ## 🧹 Cleanup
 
 ```bash
 # Remove downloaded datasets (keeps manifests)
-make clean-data
+rm -rf datasets/<dataset_name>
 
 # Check what's tracked in git
-make git-status
+git status
 ```
 
 ## ⚠️ Important Notes
@@ -164,11 +169,11 @@ make git-status
 
 ### Connection Issues
 ```bash
-# Check R2 configuration
-make check-r2
+# Check R2 credentials by listing manifests
+python scripts/data/r2_manager.py list
 
-# Test connection
-make test-connection
+# Attempt a lightweight download without validation
+python scripts/data/r2_manager.py download --dataset visdrone --no-validate
 ```
 
 ### Checksum Mismatch
@@ -181,9 +186,11 @@ make test-connection
 
 ## 📚 Documentation
 
-- [Data Architecture](../DATA_ARCHITECTURE.md) - Full architecture details
-- [R2 Manager Script](../scripts/data/r2_manager.py) - Dataset management tool
-- [Cloudflare R2 Docs](https://developers.cloudflare.com/r2/) - Official R2 documentation
+- `scripts/build_manifests.py` — generate inventories and canonical manifests
+- `scripts/data/r2_manager.py` — upload/download datasets with Cloudflare R2
+- `scripts/data/generate_presigned_urls.py` — publish presigned download manifests
+- `scripts/data/download_public_dataset.py` — participant downloader for public manifests
+- [Cloudflare R2 Docs](https://developers.cloudflare.com/r2/) — official R2 documentation
 
 ## ✅ TODO: Manifest Heuristics Enhancements
 

@@ -264,24 +264,38 @@ class R2Manager:
         
         for file_info in manifest['files']:
             local_path = dataset_dir / file_info['local_path']
-            
+            expected_sha = file_info.get('sha256')
+            has_expected_hash = expected_sha not in (None, '', 'pending')
+
             # Skip if file exists and checksum matches
-            if local_path.exists() and validate:
-                logger.info(f"Validating {local_path.name}...")
-                checksums = self.calculate_checksums(local_path)
-                
-                if (checksums['sha256'] == file_info.get('sha256') and
-                    local_path.stat().st_size == file_info.get('size_bytes')):
-                    logger.info(f"✓ {local_path.name} already exists and is valid")
-                    continue
+            if local_path.exists():
+                if validate and has_expected_hash:
+                    logger.info(f"Validating {local_path.name}...")
+                    checksums = self.calculate_checksums(local_path)
+
+                    if (
+                        checksums['sha256'] == expected_sha
+                        and local_path.stat().st_size == file_info.get('size_bytes')
+                    ):
+                        logger.info(f"✓ {local_path.name} already exists and is valid")
+                        continue
+                    else:
+                        logger.warning(
+                            f"Checksum mismatch for {local_path.name}, re-downloading..."
+                        )
                 else:
-                    logger.warning(f"Checksum mismatch for {local_path.name}, re-downloading...")
+                    if not has_expected_hash and validate:
+                        logger.info(
+                            f"Skipping validation for {local_path.name}; manifest hash pending"
+                        )
+                    # File already present; no validation needed
+                    continue
             
             # Download file
             self.download_file(file_info['r2_key'], local_path)
             
             # Validate download
-            if validate and file_info.get('sha256') != 'pending':
+            if validate and file_info.get('sha256') not in (None, '', 'pending'):
                 checksums = self.calculate_checksums(local_path)
                 if checksums['sha256'] != file_info['sha256']:
                     logger.error(f"❌ Checksum verification failed for {local_path.name}")

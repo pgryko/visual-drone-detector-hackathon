@@ -27,6 +27,7 @@ import json
 import os
 import sys
 from dataclasses import dataclass, asdict
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable, Iterator, List, Optional, Set
 
@@ -102,6 +103,47 @@ def build_manifest_for_dataset(dataset_dir: Path, do_hash: bool) -> List[FileRec
         )
         records.append(rec)
     return records
+
+
+def build_dataset_manifest_payload(
+    dataset_name: str, records: List[FileRecord], hashed: bool
+) -> dict:
+    files = []
+    total_bytes = 0
+    for rec in sorted(records, key=lambda r: r.rel_path):
+        total_bytes += rec.size_bytes
+        files.append(
+            {
+                "local_path": rec.rel_path,
+                "r2_key": f"{dataset_name}/{rec.rel_path}",
+                "size_bytes": rec.size_bytes,
+                "sha256": rec.sha256 if rec.sha256 else "pending",
+                "ext": rec.ext,
+                "mtime": rec.mtime,
+            }
+        )
+
+    generated_at = datetime.now(timezone.utc).isoformat()
+
+    manifest = {
+        "dataset": dataset_name,
+        "root": f"datasets/{dataset_name}",
+        "generated_at": generated_at,
+        "hashed": hashed,
+        "summary": {
+            "file_count": len(records),
+            "total_bytes": total_bytes,
+        },
+        "files": files,
+    }
+
+    return manifest
+
+
+def write_dataset_manifest(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2)
 
 
 def device_safe(name: str) -> str:
@@ -275,17 +317,23 @@ def main(argv: Optional[List[str]] = None) -> int:
         records = build_manifest_for_dataset(ds_dir, do_hash=do_hash)
         manifest_path = MANIFESTS_DIR / f"{ds_dir.name}.jsonl"
         write_jsonl(manifest_path, records)
+
         total_bytes = sum(r.size_bytes for r in records)
-        summary.append(
-            {
-                "dataset": ds_dir.name,
-                "root": ds_dir.relative_to(REPO_ROOT).as_posix(),
-                "manifest": manifest_path.relative_to(REPO_ROOT).as_posix(),
-                "file_count": len(records),
-                "total_bytes": total_bytes,
-                "hashed": do_hash,
-            }
+        summary_entry = {
+            "dataset": ds_dir.name,
+            "root": ds_dir.relative_to(REPO_ROOT).as_posix(),
+            "manifest": manifest_path.relative_to(REPO_ROOT).as_posix(),
+            "file_count": len(records),
+            "total_bytes": total_bytes,
+            "hashed": do_hash,
+        }
+        summary.append(summary_entry)
+
+        dataset_manifest = build_dataset_manifest_payload(
+            ds_dir.name, records, hashed=do_hash
         )
+        dataset_manifest_path = MANIFESTS_DIR / f"{ds_dir.name}.json"
+        write_dataset_manifest(dataset_manifest_path, dataset_manifest)
 
         # Curated media/labels manifest
         media_records = build_curated_media(records, ds_dir.name)

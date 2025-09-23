@@ -1,0 +1,19 @@
+{
+  "dataset": "sample-starter",
+  "generated_at": "2025-02-15T00:00:00+00:00",
+  "expires_in": 31536000,
+  "expires_at": "2026-02-15T00:00:00+00:00",
+  "summary": {
+    "file_count": 1,
+    "total_bytes": 445
+  },
+  "files": [
+    {
+      "local_path": "sample-starter/sample-starter.zip",
+      "r2_key": "sample-starter/sample-starter.zip",
+      "size_bytes": 445,
+      "sha256": "0a862cb79b0abc4f354f3e1ab5a76137db58f2bf590871da992c9e1a990ed09d",
+      "presigned_url": "https://raw.githubusercontent.com/<owner>/visual-drone-detector-hackathon/main/data/reference/sample_starter/sample-starter.zip"
+    }
+  ]
+}
