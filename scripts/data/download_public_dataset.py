@@ -95,8 +95,18 @@ def download_dataset_from_manifest(
         )
 
     try:
+        manifest_dataset = manifest.get("dataset") or manifest.get("bundle")
+
         for file_info in files:
-            rel_path = file_info.get("local_path") or file_info["r2_key"]
+            local_path = file_info.get("local_path")
+            rel_path = Path(local_path) if local_path else Path(file_info["r2_key"])
+
+            dataset_name = file_info.get("dataset") or manifest_dataset
+            if dataset_name:
+                dataset_prefix = Path(dataset_name)
+                if not rel_path.parts or rel_path.parts[0] != dataset_name:
+                    rel_path = dataset_prefix / rel_path
+
             target_path = output_root / rel_path
             target_path.parent.mkdir(parents=True, exist_ok=True)
 

@@ -61,6 +61,38 @@ class DownloadPublicDatasetTests(unittest.TestCase):
         self.assertEqual(summary["downloaded"], 1)
         self.assertEqual(fetch_calls, ["https://example.com/file.bin"])
 
+    def test_dataset_prefix_is_created_when_missing_from_local_path(self):
+        content = b"sample"
+        sha_value = hashlib.sha256(content).hexdigest()
+        manifest = {
+            "dataset": "toyset",
+            "files": [
+                {
+                    "local_path": "file.bin",
+                    "r2_key": "toyset/file.bin",
+                    "size_bytes": len(content),
+                    "sha256": sha_value,
+                    "presigned_url": "https://example.com/file.bin",
+                }
+            ],
+        }
+        self.manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+
+        def fake_fetch(url: str) -> bytes:
+            return content
+
+        summary = downloader.download_dataset_from_manifest(
+            manifest_path=self.manifest_path,
+            output_root=self.output_dir,
+            verify=True,
+            fetcher=fake_fetch,
+        )
+
+        target_path = self.output_dir / "toyset" / "file.bin"
+        self.assertTrue(target_path.exists())
+        self.assertEqual(target_path.read_bytes(), content)
+        self.assertEqual(summary["downloaded"], 1)
+
     def test_skips_existing_file_when_hash_matches(self):
         content = b"hello world"
         sha_value = hashlib.sha256(content).hexdigest()
