@@ -144,7 +144,7 @@ def download_dataset_from_manifest(
                             unit="B",
                             unit_scale=True,
                             unit_divisor=1024,
-                            desc=rel_path,
+                            desc=str(rel_path),
                             leave=False,
                             dynamic_ncols=True,
                         )
