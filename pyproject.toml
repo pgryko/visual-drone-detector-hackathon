@@ -18,3 +18,25 @@ dependencies = [
 [build-system]
 requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []
+
+[tool.ruff]
+# Apply Ruff to the whole project but exclude large/unowned data
+# The 'exclude' list is respected by both lint and format commands
+exclude = [
+    "datasets",      # user-requested: keep datasets untouched
+    ".venv", "venv", "build", "dist", "__pycache__"
+]
+# Match project Python version
+target-version = "py312"
+
+[tool.ruff.format]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.1",
+]
+# Keep default Black-like style; customize here if desired later
+# Options examples: quote-style = "double", indent-style = "space"
