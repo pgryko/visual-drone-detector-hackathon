@@ -207,14 +207,16 @@ wheels = [
 [[package]]
 name = "drone-vision-detector"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "boto3" },
     { name = "gdown" },
     { name = "kaggle" },
     { name = "pydantic-settings" },
     { name = "python-dotenv" },
+    { name = "requests" },
     { name = "roboflow" },
+    { name = "tqdm" },
 ]
 
 [package.metadata]
@@ -224,7 +226,9 @@ requires-dist = [
     { name = "kaggle", specifier = ">=1.7.4.5" },
     { name = "pydantic-settings", specifier = ">=2.10.1" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
+    { name = "requests", specifier = ">=2.32.3" },
     { name = "roboflow", specifier = ">=1.2.9" },
+    { name = "tqdm", specifier = ">=4.66.4" },
 ]
 
 [[package]]

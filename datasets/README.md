@@ -12,7 +12,7 @@ cp .env.example .env   # add your R2 keys
 python scripts/build_manifests.py --hash sha256
 
 # Upload every dataset mentioned in manifests
-python scripts/data/r2_manager.py upload --all
+python scripts/data/r2_manager.py upload --all --workers 8
 
 # Create presigned URLs for each dataset and one big bundle
 python scripts/data/generate_presigned_urls.py --all --bundle all-datasets --expires-in 86400

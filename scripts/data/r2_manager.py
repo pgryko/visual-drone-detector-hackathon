@@ -7,13 +7,15 @@ Handles upload, download, and synchronization of datasets with R2 storage
 import os
 import json
 import hashlib
-import boto3
+import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Dict, List, Optional
+
+import boto3
 from dataclasses import dataclass
-from tqdm import tqdm
-import logging
 from dotenv import load_dotenv
+from tqdm import tqdm
 
 # Load environment variables
 load_dotenv()
@@ -72,13 +74,47 @@ class R2Manager:
             'sha256': sha256_hash.hexdigest()
         }
     
-    def upload_file(self, local_path: Path, r2_key: str, 
+    def _ensure_bucket_exists(self) -> bool:
+        """Ensure the bucket exists, create if it doesn't"""
+        if not self.s3_client:
+            return False
+
+        try:
+            self.s3_client.head_bucket(Bucket=self.bucket_name)
+            logger.info(f"✅ Bucket {self.bucket_name} exists")
+            return True
+        except Exception as e:
+            if '404' in str(e) or 'NoSuchBucket' in str(e) or 'Not Found' in str(e):
+                try:
+                    logger.info(f"🔨 Creating bucket: {self.bucket_name}")
+                    # For R2, we need to create bucket without LocationConstraint
+                    self.s3_client.create_bucket(Bucket=self.bucket_name)
+                    logger.info(f"✅ Created bucket: {self.bucket_name}")
+                    return True
+                except Exception as create_error:
+                    logger.error(f"❌ Failed to create bucket {self.bucket_name}: {create_error}")
+                    logger.error(f"💡 Please create the bucket manually in Cloudflare R2 dashboard:")
+                    logger.error(f"   1. Go to https://dash.cloudflare.com/")
+                    logger.error(f"   2. Navigate to R2 Object Storage")
+                    logger.error(f"   3. Click 'Create bucket'")
+                    logger.error(f"   4. Name it '{self.bucket_name}'")
+                    return False
+            else:
+                logger.error(f"❌ Error checking bucket {self.bucket_name}: {e}")
+                return False
+
+    def upload_file(self, local_path: Path, r2_key: str,
                    show_progress: bool = True) -> bool:
         """Upload a single file to R2"""
         if not self.s3_client:
             logger.error("R2 client not initialized. Check credentials.")
             return False
-        
+
+        # Ensure bucket exists before uploading
+        if not self._ensure_bucket_exists():
+            logger.error(f"Cannot upload: bucket {self.bucket_name} doesn't exist and couldn't be created")
+            return False
+
         try:
             file_size = local_path.stat().st_size
             
@@ -197,7 +233,12 @@ class R2Manager:
             logger.error(f"❌ Failed to download from {url}: {e}")
             return False
     
-    def upload_dataset(self, dataset_name: str, update_manifest: bool = True):
+    def upload_dataset(
+        self,
+        dataset_name: str,
+        update_manifest: bool = True,
+        max_workers: int = 1,
+    ):
         """Upload an entire dataset based on its manifest"""
         manifest_path = Path(f'datasets/manifests/{dataset_name}.json')
         if not manifest_path.exists():
@@ -215,6 +256,7 @@ class R2Manager:
         logger.info(f"📦 Uploading {dataset_name} dataset...")
         
         # Update manifest with checksums if needed
+        pending_uploads = []
         for file_info in manifest['files']:
             local_path = dataset_dir / file_info['local_path']
             
@@ -236,8 +278,31 @@ class R2Manager:
                 logger.info(f"⏭️  {local_path.name} already exists in R2, skipping...")
                 continue
 
-            # Upload file
-            self.upload_file(local_path, file_info['r2_key'])
+            pending_uploads.append((local_path, file_info))
+
+        if pending_uploads:
+            show_progress = max_workers == 1
+            if max_workers <= 1:
+                for local_path, file_info in pending_uploads:
+                    self.upload_file(local_path, file_info['r2_key'], show_progress=show_progress)
+            else:
+                with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                    future_to_file = {
+                        executor.submit(
+                            self.upload_file,
+                            local_path,
+                            file_info['r2_key'],
+                            False,
+                        ): (local_path, file_info)
+                        for local_path, file_info in pending_uploads
+                    }
+                    for future in as_completed(future_to_file):
+                        local_path, file_info = future_to_file[future]
+                        success = future.result()
+                        if not success:
+                            logger.error(
+                                f"❌ Failed to upload {local_path} to {file_info['r2_key']}"
+                            )
         
         # Save updated manifest
         if update_manifest:
@@ -247,7 +312,12 @@ class R2Manager:
         
         logger.info(f"✅ Dataset {dataset_name} uploaded successfully")
     
-    def download_dataset(self, dataset_name: str, validate: bool = True):
+    def download_dataset(
+        self,
+        dataset_name: str,
+        validate: bool = True,
+        max_workers: int = 1,
+    ):
         """Download an entire dataset based on its manifest"""
         manifest_path = Path(f'datasets/manifests/{dataset_name}.json')
         if not manifest_path.exists():
@@ -262,6 +332,7 @@ class R2Manager:
         
         logger.info(f"📦 Downloading {dataset_name} dataset...")
         
+        to_download = []
         for file_info in manifest['files']:
             local_path = dataset_dir / file_info['local_path']
             expected_sha = file_info.get('sha256')
@@ -291,15 +362,36 @@ class R2Manager:
                     # File already present; no validation needed
                     continue
             
-            # Download file
-            self.download_file(file_info['r2_key'], local_path)
-            
-            # Validate download
-            if validate and file_info.get('sha256') not in (None, '', 'pending'):
-                checksums = self.calculate_checksums(local_path)
-                if checksums['sha256'] != file_info['sha256']:
-                    logger.error(f"❌ Checksum verification failed for {local_path.name}")
-                    return
+            to_download.append((file_info, local_path))
+
+        if to_download:
+            show_progress = max_workers == 1
+            if max_workers <= 1:
+                for file_info, local_path in to_download:
+                    if not self._download_and_validate(
+                        file_info, local_path, validate, show_progress
+                    ):
+                        return
+            else:
+                with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                    future_to_file = {
+                        executor.submit(
+                            self._download_and_validate,
+                            file_info,
+                            local_path,
+                            validate,
+                            False,
+                        ): (file_info, local_path)
+                        for file_info, local_path in to_download
+                    }
+                    for future in as_completed(future_to_file):
+                        _, local_path = future_to_file[future]
+                        success = future.result()
+                        if not success:
+                            logger.error(
+                                f"❌ Download or validation failed for {local_path.name}"
+                            )
+                            return
         
         logger.info(f"✅ Dataset {dataset_name} downloaded successfully")
     
@@ -318,18 +410,38 @@ class R2Manager:
         
         return datasets
     
-    def sync_all_datasets(self, direction: str = 'download'):
+    def sync_all_datasets(self, direction: str = 'download', max_workers: int = 1):
         """Sync all datasets either up or down"""
         datasets = self.list_datasets()
         
         for dataset in datasets:
             if direction == 'download':
-                self.download_dataset(dataset)
+                self.download_dataset(dataset, max_workers=max_workers)
             elif direction == 'upload':
-                self.upload_dataset(dataset)
+                self.upload_dataset(dataset, max_workers=max_workers)
             else:
                 logger.error(f"Invalid direction: {direction}. Use 'upload' or 'download'")
                 return
+
+    def _download_and_validate(
+        self, file_info: dict, local_path: Path, validate: bool, show_progress: bool
+    ) -> bool:
+        success = self.download_file(file_info['r2_key'], local_path, show_progress=show_progress)
+        if not success:
+            return False
+
+        if validate and file_info.get('sha256') not in (None, '', 'pending'):
+            checksums = self.calculate_checksums(local_path)
+            if checksums['sha256'] != file_info['sha256']:
+                logger.error(f"❌ Checksum verification failed for {local_path.name}")
+                return False
+        if validate and file_info.get('size_bytes') and local_path.stat().st_size != file_info['size_bytes']:
+            logger.error(
+                f"❌ Size verification failed for {local_path.name}: "
+                f"expected {file_info['size_bytes']} got {local_path.stat().st_size}"
+            )
+            return False
+        return True
 
 
 def main():
@@ -344,6 +456,8 @@ def main():
                        help='Process all datasets')
     parser.add_argument('--no-validate', action='store_true',
                        help='Skip checksum validation')
+    parser.add_argument('--workers', type=int, default=1,
+                       help='Parallel workers for upload/download (default: 1)')
     
     args = parser.parse_args()
     
@@ -357,17 +471,21 @@ def main():
     
     elif args.action in ['upload', 'download']:
         if args.all:
-            manager.sync_all_datasets(direction=args.action)
+            manager.sync_all_datasets(direction=args.action, max_workers=args.workers)
         elif args.dataset:
             if args.action == 'upload':
-                manager.upload_dataset(args.dataset)
+                manager.upload_dataset(args.dataset, max_workers=args.workers)
             else:
-                manager.download_dataset(args.dataset, validate=not args.no_validate)
+                manager.download_dataset(
+                    args.dataset,
+                    validate=not args.no_validate,
+                    max_workers=args.workers,
+                )
         else:
             print("Please specify --dataset or --all")
     
     elif args.action == 'sync':
-        manager.sync_all_datasets(direction='download')
+        manager.sync_all_datasets(direction='download', max_workers=args.workers)
 
 
 if __name__ == '__main__':

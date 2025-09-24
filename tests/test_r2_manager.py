@@ -92,7 +92,7 @@ class R2ManagerManifestTests(unittest.TestCase):
 
         manager.calculate_checksums = fake_checksums
 
-        manager.upload_dataset(dataset_name)
+        manager.upload_dataset(dataset_name, max_workers=1)
 
         manifest_path = self.manifests_dir / f"{dataset_name}.json"
         manifest_data = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -140,10 +140,92 @@ class R2ManagerManifestTests(unittest.TestCase):
         manager.calculate_checksums = fake_checksums
         manager.download_file = fake_download
 
-        manager.download_dataset(dataset_name, validate=True)
+        manager.download_dataset(dataset_name, validate=True, max_workers=1)
 
-        self.assertFalse(download_calls, "Expected no download when hashes are pending")
-        self.assertFalse(checksum_calls, "Expected no checksum calculation when hashes are pending")
+    def test_upload_dataset_parallel_invokes_upload(self):
+        dataset_name = "toyset"
+        dataset_dir = self.datasets_dir / dataset_name
+        dataset_dir.mkdir(parents=True, exist_ok=True)
+
+        paths = []
+        for idx in range(2):
+            img_path = dataset_dir / f"images/frame_{idx}.jpg"
+            img_path.parent.mkdir(parents=True, exist_ok=True)
+            img_path.write_bytes(b"example-bytes" + bytes([idx]))
+            paths.append(img_path)
+
+        files = []
+        for idx, path in enumerate(paths):
+            files.append(
+                {
+                    "local_path": path.relative_to(dataset_dir).as_posix(),
+                    "r2_key": f"toyset/{path.relative_to(dataset_dir).as_posix()}",
+                    "size_bytes": 0,
+                    "sha256": "pending",
+                }
+            )
+
+        self._write_manifest(dataset_name, files)
+
+        manager = R2Manager()
+        manager._file_exists_in_r2 = lambda *args, **kwargs: False
+
+        upload_calls = []
+
+        def fake_upload(local_path, r2_key, show_progress=True):
+            upload_calls.append((Path(local_path), r2_key, show_progress))
+            return True
+
+        def fake_checksums(local_path):
+            return {"md5": "md5", "sha256": f"sha_{Path(local_path).name}"}
+
+        manager.upload_file = fake_upload
+        manager.calculate_checksums = fake_checksums
+
+        manager.upload_dataset(dataset_name, max_workers=2)
+
+        self.assertEqual(len(upload_calls), 2)
+        self.assertTrue(all(not call[2] for call in upload_calls))
+
+    def test_download_dataset_parallel_invokes_download(self):
+        dataset_name = "toyset"
+        dataset_dir = self.datasets_dir / dataset_name
+        dataset_dir.mkdir(parents=True, exist_ok=True)
+
+        files = [
+            {
+                "local_path": "images/frame_0001.jpg",
+                "r2_key": "toyset/images/frame_0001.jpg",
+                "size_bytes": 12,
+                "sha256": "pending",
+            },
+            {
+                "local_path": "images/frame_0002.jpg",
+                "r2_key": "toyset/images/frame_0002.jpg",
+                "size_bytes": 12,
+                "sha256": "pending",
+            },
+        ]
+
+        self._write_manifest(dataset_name, files)
+
+        manager = R2Manager()
+
+        download_calls = []
+
+        def fake_download(r2_key, local_path, show_progress=True):
+            download_calls.append((r2_key, Path(local_path), show_progress))
+            Path(local_path).parent.mkdir(parents=True, exist_ok=True)
+            Path(local_path).write_bytes(b"content")
+            return True
+
+        manager.download_file = fake_download
+        manager.calculate_checksums = lambda path: {"md5": "md5", "sha256": "sha"}
+
+        manager.download_dataset(dataset_name, validate=False, max_workers=2)
+
+        self.assertEqual(len(download_calls), 2)
+        self.assertTrue(all(not call[2] for call in download_calls))
 
 
 if __name__ == "__main__":

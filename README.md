@@ -7,24 +7,6 @@ Keep the data pipeline boring and predictable. The repo gives you three scripts:
 - `scripts/data/generate_presigned_urls.py` – mint short-lived download links.
 - `scripts/data/download_public_dataset.py` – participants use this to grab data.
 
-## Maintainer: Ship All Datasets in One Go
-
-```bash
-uv sync                    # install dependencies (/create .venv)
-cp .env.example .env       # fill in your R2 keys and bucket info
-
-# 1. Scan every dataset folder and write manifests (adds sha256 hashes)
-python scripts/build_manifests.py --hash sha256
-
-# 2. Upload everything listed in manifests to Cloudflare R2
-python scripts/data/r2_manager.py upload --all
-
-# 3. Generate presigned URLs for every dataset + one bundle manifest
-python scripts/data/generate_presigned_urls.py --all --bundle all-datasets --expires-in 86400
-```
-
-Share `datasets/manifests/presigned/all-datasets.public.json` only during the
-hackathon window. Participants can download everything with a single command.
 
 ## Participant: Grab the Data and Start
 
@@ -52,6 +34,25 @@ PY
 ```
 
 Hook your detector or trainer into that loop, then swap in the full bundle manifest.
+
+## Maintainer: Ship All Datasets in One Go
+
+```bash
+uv sync                    # install dependencies (/create .venv)
+cp .env.example .env       # fill in your R2 keys and bucket info
+
+# 1. Scan every dataset folder and write manifests (adds sha256 hashes)
+python scripts/build_manifests.py --hash sha256
+
+# 2. Upload everything listed in manifests to Cloudflare R2
+python scripts/data/r2_manager.py upload --all --workers 8  # tweak workers for speed
+
+# 3. Generate presigned URLs for every dataset + one bundle manifest
+python scripts/data/generate_presigned_urls.py --all --bundle all-datasets --expires-in 86400
+```
+
+Share `datasets/manifests/presigned/all-datasets.public.json` only during the
+hackathon window. Participants can download everything with a single command.
 
 ## Tests
 
