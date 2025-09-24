@@ -11,6 +11,8 @@ from pathlib import Path
 from typing import Callable, Dict, Optional
 from urllib import request
 
+from tqdm import tqdm
+
 CHUNK_SIZE = 1024 * 1024  # 1 MiB
 
 
@@ -30,11 +32,6 @@ def load_public_manifest(path: Path) -> Dict:
         return json.load(f)
 
 
-def _http_fetch(url: str) -> bytes:
-    with request.urlopen(url) as resp:
-        return resp.read()
-
-
 def _has_expected_hash(value: Optional[str]) -> bool:
     return value not in (None, "", "pending")
 
@@ -49,6 +46,7 @@ def _stream_download(
     expected_sha: Optional[str],
     expected_size: Optional[int],
     verify: bool,
+    progress: Optional[tqdm] = None,
 ) -> Dict[str, Optional[str | int]]:
     """Download ``url`` to ``destination`` in chunks and return metadata."""
 
@@ -64,6 +62,8 @@ def _stream_download(
             downloaded_size += len(chunk)
             if hasher is not None:
                 hasher.update(chunk)
+            if progress is not None:
+                progress.update(len(chunk))
 
     downloaded_sha = hasher.hexdigest() if hasher is not None else None
 
@@ -84,70 +84,106 @@ def download_dataset_from_manifest(
     if total_files == 0:
         print("Manifest contained no files", flush=True)
 
-    for index, file_info in enumerate(files, start=1):
-        rel_path = file_info.get("local_path") or file_info["r2_key"]
-        target_path = output_root / rel_path
-        target_path.parent.mkdir(parents=True, exist_ok=True)
+    show_progress = fetcher is None and total_files > 0
+    file_progress: Optional[tqdm] = None
+    if show_progress:
+        file_progress = tqdm(
+            total=total_files,
+            unit="file",
+            desc="Files",
+            dynamic_ncols=True,
+        )
 
-        expected_sha = file_info.get("sha256")
-        expected_size = file_info.get("size_bytes")
+    try:
+        for file_info in files:
+            rel_path = file_info.get("local_path") or file_info["r2_key"]
+            target_path = output_root / rel_path
+            target_path.parent.mkdir(parents=True, exist_ok=True)
 
-        if target_path.exists():
-            if verify and _has_expected_hash(expected_sha):
-                current_sha = _checksum(target_path.read_bytes())
-                current_size = target_path.stat().st_size
-                if current_sha == expected_sha and (
-                    expected_size is None or current_size == expected_size
-                ):
+            expected_sha = file_info.get("sha256")
+            expected_size = file_info.get("size_bytes")
+
+            if target_path.exists():
+                if verify and _has_expected_hash(expected_sha):
+                    current_sha = _checksum(target_path.read_bytes())
+                    current_size = target_path.stat().st_size
+                    if current_sha == expected_sha and (
+                        expected_size is None or current_size == expected_size
+                    ):
+                        summary["skipped"] += 1
+                        if file_progress is not None:
+                            file_progress.update(1)
+                        continue
+                elif not verify:
                     summary["skipped"] += 1
+                    if file_progress is not None:
+                        file_progress.update(1)
                     continue
-            elif not verify:
-                summary["skipped"] += 1
-                continue
 
-        presigned_url = file_info["presigned_url"]
+            presigned_url = file_info["presigned_url"]
 
-        if fetcher is None:
-            meta = _stream_download(
-                url=presigned_url,
-                destination=target_path,
-                expected_sha=expected_sha,
-                expected_size=expected_size,
-                verify=verify,
-            )
-            downloaded_sha = meta["sha"]
-            downloaded_size = meta["size"]
-        else:
-            content = fetcher(presigned_url)
-            target_path.write_bytes(content)
-            downloaded_size = len(content)
-            downloaded_sha = (
-                _checksum(content)
-                if verify and _has_expected_hash(expected_sha)
-                else None
-            )
+            if fetcher is None:
+                byte_progress: Optional[tqdm] = None
+                if show_progress:
+                    # Only show a byte-level bar for sizeable downloads to avoid
+                    # spamming logs with short-lived progress bars.
+                    size_hint = expected_size or 0
+                    if size_hint >= 1_000_000 or expected_size is None:
+                        byte_progress = tqdm(
+                            total=expected_size,
+                            unit="B",
+                            unit_scale=True,
+                            unit_divisor=1024,
+                            desc=rel_path,
+                            leave=False,
+                            dynamic_ncols=True,
+                        )
+                try:
+                    meta = _stream_download(
+                        url=presigned_url,
+                        destination=target_path,
+                        expected_sha=expected_sha,
+                        expected_size=expected_size,
+                        verify=verify,
+                        progress=byte_progress,
+                    )
+                finally:
+                    if byte_progress is not None:
+                        byte_progress.close()
 
-        if verify and _has_expected_hash(expected_sha):
-            if downloaded_sha != expected_sha:
-                raise ChecksumMismatchError(
-                    f"Checksum mismatch for {target_path}: expected {expected_sha} got {downloaded_sha}"
+                downloaded_sha = meta["sha"]
+                downloaded_size = meta["size"]
+            else:
+                content = fetcher(presigned_url)
+                target_path.write_bytes(content)
+                downloaded_size = len(content)
+                downloaded_sha = (
+                    _checksum(content)
+                    if verify and _has_expected_hash(expected_sha)
+                    else None
                 )
-        if verify and expected_size is not None and downloaded_size != expected_size:
-            raise ChecksumMismatchError(
-                f"Size mismatch for {target_path}: expected {expected_size} bytes got {downloaded_size}"
-            )
 
-        summary["downloaded"] += 1
+            if verify and _has_expected_hash(expected_sha):
+                if downloaded_sha != expected_sha:
+                    raise ChecksumMismatchError(
+                        f"Checksum mismatch for {target_path}: expected {expected_sha} got {downloaded_sha}"
+                    )
+            if (
+                verify
+                and expected_size is not None
+                and downloaded_size != expected_size
+            ):
+                raise ChecksumMismatchError(
+                    f"Size mismatch for {target_path}: expected {expected_size} bytes got {downloaded_size}"
+                )
 
-        if total_files:
-            should_report = (
-                total_files <= 100
-                or index == 1
-                or index == total_files
-                or index % 100 == 0
-            )
-            if should_report:
-                print(f"[{index}/{total_files}] downloaded {rel_path}", flush=True)
+            summary["downloaded"] += 1
+            if file_progress is not None:
+                file_progress.update(1)
+
+    finally:
+        if file_progress is not None:
+            file_progress.close()
 
     return summary
 
