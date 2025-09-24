@@ -1,5 +1,7 @@
 # Visual Drone Detector Hackathon Starter
 
+Datasets for training and evaluating visual drone detectors.
+
 Keep the data pipeline boring and predictable. The repo gives you three scripts:
 
 - `scripts/build_manifests.py` – inventory every dataset on disk.
