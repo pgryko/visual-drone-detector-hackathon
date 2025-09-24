@@ -30,7 +30,9 @@ def _is_default_archive(candidate: Path) -> bool:
     """Return True if ``candidate`` points at the bundled sample archive."""
 
     try:
-        return candidate.resolve(strict=False) == DEFAULT_SAMPLE_ZIP.resolve(strict=False)
+        return candidate.resolve(strict=False) == DEFAULT_SAMPLE_ZIP.resolve(
+            strict=False
+        )
     except RuntimeError:
         # ``resolve`` can raise on deeply nested relative paths; fall back to equality.
         return candidate == DEFAULT_SAMPLE_ZIP
