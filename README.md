@@ -12,10 +12,12 @@ Keep the data pipeline boring and predictable. The repo gives you three scripts:
 
 ## Participant: Grab the Data and Start
 
+Put the provided manifest file with presigned url in 'datasets/manifests/presigned/all-datasets.public.json'
+
 ```bash
 uv sync
 python scripts/data/download_public_dataset.py \
-  --manifest path/to/all-datasets.public.json \
+  --manifest datasets/manifests/presigned/all-datasets.public.json \
   --output-dir datasets
 ```
 
@@ -50,7 +52,7 @@ python scripts/build_manifests.py --hash sha256
 python scripts/data/r2_manager.py upload --all --workers 8  # tweak workers for speed
 
 # 3. Generate presigned URLs for every dataset + one bundle manifest
-python scripts/data/generate_presigned_urls.py --all --bundle all-datasets --expires-in 86400
+python -m scripts.data.generate_presigned_urls --all --bundle all-datasets --expires-in 60480
 ```
 
 Share `datasets/manifests/presigned/all-datasets.public.json` only during the
