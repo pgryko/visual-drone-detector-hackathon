@@ -92,7 +92,9 @@ def download_dataset_from_manifest(
 
 def main(argv: Optional[list[str]] = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--manifest", required=True, help="Path to public manifest JSON")
+    parser.add_argument(
+        "--manifest", required=True, help="Path to public manifest JSON"
+    )
     parser.add_argument(
         "--output-dir",
         default="datasets",

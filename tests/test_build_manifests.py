@@ -52,8 +52,12 @@ class BuildManifestsIntegrationTests(unittest.TestCase):
         jsonl_path = self.manifests_dir / "toyset.jsonl"
         media_jsonl_path = self.manifests_dir / "toyset.media.jsonl"
 
-        self.assertTrue(json_path.exists(), "Expected dataset JSON manifest to be created")
-        self.assertTrue(jsonl_path.exists(), "Expected per-file JSONL manifest to be created")
+        self.assertTrue(
+            json_path.exists(), "Expected dataset JSON manifest to be created"
+        )
+        self.assertTrue(
+            jsonl_path.exists(), "Expected per-file JSONL manifest to be created"
+        )
         self.assertTrue(
             media_jsonl_path.exists(),
             "Expected curated media JSONL manifest to be created",
@@ -89,7 +93,10 @@ class BuildManifestsIntegrationTests(unittest.TestCase):
         build_manifests.main(["--datasets", "toyset"])
 
         media_path = self.manifests_dir / "toyset.media.jsonl"
-        records = [json.loads(line) for line in media_path.read_text(encoding="utf-8").splitlines()]
+        records = [
+            json.loads(line)
+            for line in media_path.read_text(encoding="utf-8").splitlines()
+        ]
         image_record = next(rec for rec in records if rec["kind"] == "image")
         label_record = next(rec for rec in records if rec["kind"] == "annotation")
         self.assertTrue(image_record["paired_with"].endswith("labels/frame_0001.txt"))

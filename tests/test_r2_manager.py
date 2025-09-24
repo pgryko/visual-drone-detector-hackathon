@@ -28,7 +28,10 @@ class R2ManagerManifestTests(unittest.TestCase):
         manifest = {
             "dataset": dataset_name,
             "files": files,
-            "summary": {"file_count": len(files), "total_bytes": sum(f.get("size_bytes", 0) for f in files)},
+            "summary": {
+                "file_count": len(files),
+                "total_bytes": sum(f.get("size_bytes", 0) for f in files),
+            },
         }
         (self.manifests_dir / f"{dataset_name}.json").write_text(
             json.dumps(manifest, indent=2), encoding="utf-8"

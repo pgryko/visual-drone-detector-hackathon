@@ -111,7 +111,9 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     manager = R2Manager()
     if manager.s3_client is None:
-        print("R2 client not configured. Please set credentials in .env", file=sys.stderr)
+        print(
+            "R2 client not configured. Please set credentials in .env", file=sys.stderr
+        )
         return 2
 
     dataset_names = resolve_dataset_names(args, manager)
@@ -165,8 +167,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         return 1
 
     print(
-        "Generated presigned manifests:\n" +
-        "\n".join(f" - {path}" for path in output_paths)
+        "Generated presigned manifests:\n"
+        + "\n".join(f" - {path}" for path in output_paths)
     )
     return 0
 

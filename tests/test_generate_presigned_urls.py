@@ -75,7 +75,8 @@ class PresignGenerationTests(unittest.TestCase):
         self.assertEqual(len(payload["files"]), 1)
         file_entry = payload["files"][0]
         self.assertEqual(
-            file_entry["presigned_url"], "https://example.com/toyset/file.zip?expires=3600"
+            file_entry["presigned_url"],
+            "https://example.com/toyset/file.zip?expires=3600",
         )
         self.assertEqual(file_entry["size_bytes"], 123)
         self.assertEqual(file_entry["r2_key"], "toyset/file.zip")

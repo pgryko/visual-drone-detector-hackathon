@@ -219,14 +219,22 @@ def classify_kind(rel_path: str, ext: str) -> str:
         return "video"
     if ext == YOLO_LABEL_EXT and ("/labels/" in lp or lp.startswith("labels/")):
         return "annotation"
-    if ext == "json" and ("/annotations/" in lp or lp.startswith("annotations/") or Path(rel_path).name.startswith("instances_")):
+    if ext == "json" and (
+        "/annotations/" in lp
+        or lp.startswith("annotations/")
+        or Path(rel_path).name.startswith("instances_")
+    ):
         return "annotation"
-    if ext == "xml" and ("/annotations/" in lp or "pascal" in lp or "voc" in lp or "/annotations" in lp):
+    if ext == "xml" and (
+        "/annotations/" in lp or "pascal" in lp or "voc" in lp or "/annotations" in lp
+    ):
         return "annotation"
     return "other"
 
 
-def build_curated_media(records: List[FileRecord], dataset_name: str) -> List[MediaRecord]:
+def build_curated_media(
+    records: List[FileRecord], dataset_name: str
+) -> List[MediaRecord]:
     # Index YOLO-style images and labels by a normalized key
     image_by_key: dict[str, FileRecord] = {}
     label_by_key: dict[str, FileRecord] = {}
