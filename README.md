@@ -52,7 +52,7 @@ python scripts/build_manifests.py --hash sha256
 python scripts/data/r2_manager.py upload --all --workers 8  # tweak workers for speed
 
 # 3. Generate presigned URLs for every dataset + one bundle manifest
-python -m scripts.data.generate_presigned_urls --all --bundle all-datasets --expires-in 60480
+python -m scripts.data.generate_presigned_urls --all --bundle all-datasets --expires-in 604800
 ```
 
 Share `datasets/manifests/presigned/all-datasets.public.json` only during the
